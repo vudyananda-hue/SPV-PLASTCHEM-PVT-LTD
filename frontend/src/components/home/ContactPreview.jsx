@@ -3,16 +3,32 @@ import { Link } from 'react-router-dom'
 import { Send, Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { company } from '../../data/content'
+import { api } from '../../lib/api'
 
 export default function ContactPreview() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
-    setForm({ name: '', email: '', message: '' })
+    setLoading(true)
+    setError(null)
+    try {
+      await api.submitInquiry({
+        name: form.name,
+        email: form.email,
+        message: form.message
+      })
+      setSubmitted(true)
+      setTimeout(() => setSubmitted(false), 3000)
+      setForm({ name: '', email: '', message: '' })
+    } catch (err) {
+      setError(err.message || 'Failed to send inquiry. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const containerVariants = {
@@ -64,13 +80,18 @@ export default function ContactPreview() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4" id="quick-inquiry-form">
+                {error && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-600">
+                    {error}
+                  </div>
+                )}
                 <div className="grid sm:grid-cols-2 gap-4">
                   <input type="text" placeholder="Your Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" />
                   <input type="email" placeholder="Email Address" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" />
                 </div>
                 <textarea placeholder="How can we help you?" required rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all resize-none" />
-                <button type="submit" className="btn-primary">
-                  Send Inquiry <Send className="w-4 h-4" />
+                <button type="submit" disabled={loading} className="btn-primary disabled:opacity-50">
+                  {loading ? 'Sending...' : <>Send Inquiry <Send className="w-4 h-4" /></>}
                 </button>
               </form>
             )}

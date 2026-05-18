@@ -2,16 +2,35 @@ import { useState } from 'react'
 import { Send, Clock } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { contactInfo } from '../data/content'
+import { api } from '../lib/api'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', subject: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
-    setForm({ name: '', email: '', company: '', phone: '', subject: '', message: '' })
+    setLoading(true)
+    setError(null)
+    try {
+      await api.submitInquiry({
+        name: form.name,
+        email: form.email,
+        company: form.company || undefined,
+        phone: form.phone || undefined,
+        product_category: form.subject || undefined,
+        message: form.message
+      })
+      setSubmitted(true)
+      setTimeout(() => setSubmitted(false), 5000)
+      setForm({ name: '', email: '', company: '', phone: '', subject: '', message: '' })
+    } catch (err) {
+      setError(err.message || 'Failed to send message. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -46,6 +65,11 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5" id="contact-form">
+                  {error && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-600">
+                      {error}
+                    </div>
+                  )}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-neutral-700 mb-1.5">Full Name *</label>
@@ -81,8 +105,8 @@ export default function Contact() {
                     <label className="block text-sm font-medium text-neutral-700 mb-1.5">Message *</label>
                     <textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all resize-none" placeholder="Tell us how we can help..." />
                   </div>
-                  <button type="submit" className="btn-primary !py-3 !px-8">
-                    Send Message <Send className="w-4 h-4" />
+                  <button type="submit" disabled={loading} className="btn-primary !py-3 !px-8 disabled:opacity-50">
+                    {loading ? 'Sending...' : <>Send Message <Send className="w-4 h-4" /></>}
                   </button>
                 </form>
               )}

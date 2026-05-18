@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Send, X, ChevronRight } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { productCategories } from '../data/content'
+import { api } from '../lib/api'
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -10,6 +11,8 @@ export default function Products() {
   const [inquiryProduct, setInquiryProduct] = useState(null)
   const [inquiryForm, setInquiryForm] = useState({ name: '', email: '', company: '', message: '' })
   const [inquirySubmitted, setInquirySubmitted] = useState(false)
+  const [inquiryLoading, setInquiryLoading] = useState(false)
+  const [inquiryError, setInquiryError] = useState(null)
 
   const handleCategoryChange = (slug) => {
     if (slug === 'all') {
@@ -21,10 +24,25 @@ export default function Products() {
 
   const filteredCategories = activeCategory === 'all' ? productCategories : productCategories.filter((c) => c.slug === activeCategory)
 
-  const handleInquirySubmit = (e) => {
+  const handleInquirySubmit = async (e) => {
     e.preventDefault()
-    setInquirySubmitted(true)
-    setTimeout(() => { setInquirySubmitted(false); setInquiryProduct(null); setInquiryForm({ name: '', email: '', company: '', message: '' }) }, 3000)
+    setInquiryLoading(true)
+    setInquiryError(null)
+    try {
+      await api.submitInquiry({
+        name: inquiryForm.name,
+        email: inquiryForm.email,
+        company: inquiryForm.company || undefined,
+        product_category: inquiryProduct?.name || undefined,
+        message: inquiryForm.message
+      })
+      setInquirySubmitted(true)
+      setTimeout(() => { setInquirySubmitted(false); setInquiryProduct(null); setInquiryForm({ name: '', email: '', company: '', message: '' }) }, 3000)
+    } catch (err) {
+      setInquiryError(err.message || 'Failed to send inquiry. Please try again.')
+    } finally {
+      setInquiryLoading(false)
+    }
   }
 
   return (
@@ -129,11 +147,18 @@ export default function Products() {
               </div>
             ) : (
               <form onSubmit={handleInquirySubmit} className="space-y-3">
+                {inquiryError && (
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-600">
+                    {inquiryError}
+                  </div>
+                )}
                 <input type="text" placeholder="Your Name" required value={inquiryForm.name} onChange={(e) => setInquiryForm({ ...inquiryForm, name: e.target.value })} className="w-full px-4 py-2.5 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none" />
                 <input type="email" placeholder="Email" required value={inquiryForm.email} onChange={(e) => setInquiryForm({ ...inquiryForm, email: e.target.value })} className="w-full px-4 py-2.5 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none" />
                 <input type="text" placeholder="Company (optional)" value={inquiryForm.company} onChange={(e) => setInquiryForm({ ...inquiryForm, company: e.target.value })} className="w-full px-4 py-2.5 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none" />
                 <textarea placeholder="Your message..." required rows={3} value={inquiryForm.message} onChange={(e) => setInquiryForm({ ...inquiryForm, message: e.target.value })} className="w-full px-4 py-2.5 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none resize-none" />
-                <button type="submit" className="btn-primary w-full justify-center">Send Inquiry <Send className="w-4 h-4" /></button>
+                <button type="submit" disabled={inquiryLoading} className="btn-primary w-full justify-center disabled:opacity-50">
+                  {inquiryLoading ? 'Sending...' : <>Send Inquiry <Send className="w-4 h-4" /></>}
+                </button>
               </form>
             )}
           </div>
