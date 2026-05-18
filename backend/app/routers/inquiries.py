@@ -10,9 +10,10 @@ router = APIRouter(prefix="/inquiries", tags=["Inquiries"])
 @router.post("", response_model=InquiryResponse, status_code=201)
 async def submit_inquiry(inquiry: InquiryCreate):
     """Submit a new inquiry (public)."""
-    db = get_supabase_client()
+    db = get_supabase_admin()
     result = db.table("inquiries").insert(inquiry.model_dump()).execute()
     return result.data[0]
+
 
 
 @router.get("", response_model=List[InquiryResponse])
