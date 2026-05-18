@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Eye, Target, Award, Users, CheckCircle } from 'lucide-react'
+import { ArrowRight, Eye, Target, CheckCircle } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import SectionTitle from '../components/common/SectionTitle'
 import { company, companyHistory, corporateValues } from '../data/content'

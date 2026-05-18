@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Send, Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { company } from '../../data/content'
 
 export default function ContactPreview() {
@@ -14,6 +15,25 @@ export default function ContactPreview() {
     setForm({ name: '', email: '', message: '' })
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  }
+
   return (
     <section id="contact-preview" className="section-padding bg-primary-900 relative overflow-hidden">
       {/* Decorative background orb */}
@@ -22,10 +42,15 @@ export default function ContactPreview() {
       <div className="container-wide mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left — Quick Form */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
             <span className="inline-block text-sm font-semibold tracking-widest uppercase text-white bg-accent-500 px-3 py-1 rounded-md mb-3">Get In Touch</span>
             <h2
-              className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4 animate-scale-up"
+              className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4"
               style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}
             >
               Send Us an Inquiry
@@ -49,44 +74,64 @@ export default function ContactPreview() {
                 </button>
               </form>
             )}
-          </div>
+          </motion.div>
 
           {/* Right — Contact Cards */}
-          <div className="flex flex-col gap-5">
-            <div className="glass rounded-xl p-6 border border-white/10 card-hover flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-accent-500/20 flex items-center justify-center shrink-0">
+          <motion.div 
+            className="flex flex-col gap-5"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ x: 8 }}
+              className="group glass rounded-xl p-6 border border-white/10 card-hover flex items-start gap-4 cursor-pointer"
+            >
+              <div className="w-11 h-11 rounded-xl bg-accent-500/20 flex items-center justify-center shrink-0 group-hover:bg-accent-500/30 transition-colors">
                 <Phone className="w-5 h-5 text-accent-400" />
               </div>
               <div>
-                <h4 className="font-semibold text-white text-sm mb-1">Call Us</h4>
-                <a href={`tel:${company.phone.replace(/\s/g, '')}`} className="text-sm text-neutral-300 hover:text-accent-400 transition-colors">{company.phone}</a>
+                <h4 className="font-semibold text-white text-sm mb-1 group-hover:text-accent-400 transition-colors">Call Us</h4>
+                <a href={`tel:${company.phone.replace(/\s/g, '')}`} className="text-sm text-neutral-300 group-hover:text-white transition-colors">{company.phone}</a>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="glass rounded-xl p-6 border border-white/10 card-hover flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-accent-500/20 flex items-center justify-center shrink-0">
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ x: 8 }}
+              className="group glass rounded-xl p-6 border border-white/10 card-hover flex items-start gap-4 cursor-pointer"
+            >
+              <div className="w-11 h-11 rounded-xl bg-accent-500/20 flex items-center justify-center shrink-0 group-hover:bg-accent-500/30 transition-colors">
                 <Mail className="w-5 h-5 text-accent-400" />
               </div>
               <div>
-                <h4 className="font-semibold text-white text-sm mb-1">Email Us</h4>
-                <a href={`mailto:${company.email}`} className="text-sm text-neutral-300 hover:text-accent-400 transition-colors">{company.email}</a>
+                <h4 className="font-semibold text-white text-sm mb-1 group-hover:text-accent-400 transition-colors">Email Us</h4>
+                <a href={`mailto:${company.email}`} className="text-sm text-neutral-300 group-hover:text-white transition-colors">{company.email}</a>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="glass rounded-xl p-6 border border-white/10 card-hover flex items-start gap-4">
-              <div className="w-11 h-11 rounded-xl bg-accent-500/20 flex items-center justify-center shrink-0">
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ x: 8 }}
+              className="group glass rounded-xl p-6 border border-white/10 card-hover flex items-start gap-4 cursor-pointer"
+            >
+              <div className="w-11 h-11 rounded-xl bg-accent-500/20 flex items-center justify-center shrink-0 group-hover:bg-accent-500/30 transition-colors">
                 <MapPin className="w-5 h-5 text-accent-400" />
               </div>
               <div>
-                <h4 className="font-semibold text-white text-sm mb-1">Visit Us</h4>
-                <p className="text-sm text-neutral-300">{company.fullAddress}</p>
+                <h4 className="font-semibold text-white text-sm mb-1 group-hover:text-accent-400 transition-colors">Visit Us</h4>
+                <p className="text-sm text-neutral-300 group-hover:text-white transition-colors">{company.fullAddress}</p>
               </div>
-            </div>
+            </motion.div>
 
-            <Link to="/contact" className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-accent-500 hover:text-accent-600 transition-colors" id="contact-full-page-link">
-              View Full Contact Page <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+            <motion.div variants={itemVariants}>
+              <Link to="/contact" className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-accent-500 hover:text-accent-600 transition-colors" id="contact-full-page-link">
+                View Full Contact Page <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

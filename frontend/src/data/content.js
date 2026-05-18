@@ -35,10 +35,10 @@ export const company = {
   chairmanTitle: 'Chairman / Managing Director',
   chairmanBio:
     'Dr. Vudyananda Sellahewa brings decades of expertise in industrial chemistry and business leadership. Under his stewardship, S P V Plastchem has grown into a trusted name across multiple industrial sectors in Sri Lanka and beyond, driven by a commitment to innovation, quality, and customer-centric solutions.',
-  phone: '+94 11 234 5678',
-  email: 'info@spvplastchem.com',
-  address: 'Colombo, Sri Lanka',
-  fullAddress: 'No. 42, Industrial Zone, Colombo 15, Sri Lanka',
+  phone: '(+94) 117 592 828',
+  email: 'vudya@spvplastchem.lk',
+  address: 'Piliyandala, Sri Lanka',
+  fullAddress: '80A, Jayasena Udawatta Place, New Hadigama Road, Piliyandala (10300), Sri Lanka',
   website: 'www.spvplastchem.com',
 }
 
@@ -49,19 +49,19 @@ export const contactInfo = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '+94 11 234 5678',
-    href: 'tel:+94112345678',
+    value: '(+94) 117 592 828',
+    href: 'tel:+94117592828',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@spvplastchem.com',
-    href: 'mailto:info@spvplastchem.com',
+    value: 'vudya@spvplastchem.lk',
+    href: 'mailto:vudya@spvplastchem.lk',
   },
   {
     icon: MapPin,
     label: 'Address',
-    value: 'No. 42, Industrial Zone, Colombo 15, Sri Lanka',
+    value: '80A, Jayasena Udawatta Place, New Hadigama Road, Piliyandala (10300), Sri Lanka',
     href: null,
   },
   {
