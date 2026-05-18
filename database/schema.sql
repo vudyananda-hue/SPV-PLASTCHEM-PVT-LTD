@@ -70,6 +70,9 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- Safely drop trigger if it exists before creating
+DROP TRIGGER IF EXISTS products_updated_at ON products;
+
 CREATE TRIGGER products_updated_at
     BEFORE UPDATE ON products
     FOR EACH ROW
@@ -85,47 +88,58 @@ ALTER TABLE admin_profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE announcements ENABLE ROW LEVEL SECURITY;
 
 -- Products: public read, admin write
+DROP POLICY IF EXISTS "Products viewable by everyone" ON products;
 CREATE POLICY "Products viewable by everyone"
     ON products FOR SELECT USING (is_active = true);
 
+DROP POLICY IF EXISTS "Admins manage products" ON products;
 CREATE POLICY "Admins manage products"
     ON products FOR ALL USING (
         auth.uid() IN (SELECT id FROM admin_profiles)
     );
 
 -- Inquiries: anyone can submit, admin can read/update
+DROP POLICY IF EXISTS "Anyone can submit inquiries" ON inquiries;
 CREATE POLICY "Anyone can submit inquiries"
     ON inquiries FOR INSERT WITH CHECK (true);
 
+DROP POLICY IF EXISTS "Admins view inquiries" ON inquiries;
 CREATE POLICY "Admins view inquiries"
     ON inquiries FOR SELECT USING (
         auth.uid() IN (SELECT id FROM admin_profiles)
     );
 
+DROP POLICY IF EXISTS "Admins update inquiries" ON inquiries;
 CREATE POLICY "Admins update inquiries"
     ON inquiries FOR UPDATE USING (
         auth.uid() IN (SELECT id FROM admin_profiles)
     );
 
 -- Brochures: public read, admin write
+DROP POLICY IF EXISTS "Brochures viewable by everyone" ON brochures;
 CREATE POLICY "Brochures viewable by everyone"
     ON brochures FOR SELECT USING (true);
 
+DROP POLICY IF EXISTS "Admins manage brochures" ON brochures;
 CREATE POLICY "Admins manage brochures"
     ON brochures FOR ALL USING (
         auth.uid() IN (SELECT id FROM admin_profiles)
     );
 
 -- Admin profiles: only admins can view
+DROP POLICY IF EXISTS "Admin profiles readable by admins" ON admin_profiles;
 CREATE POLICY "Admin profiles readable by admins"
     ON admin_profiles FOR SELECT USING (
-        auth.uid() IN (SELECT id FROM admin_profiles)
+        auth.uid() = id
     );
 
+
 -- Announcements: published ones public, admin manages all
+DROP POLICY IF EXISTS "Published announcements viewable" ON announcements;
 CREATE POLICY "Published announcements viewable"
     ON announcements FOR SELECT USING (is_published = true);
 
+DROP POLICY IF EXISTS "Admins manage announcements" ON announcements;
 CREATE POLICY "Admins manage announcements"
     ON announcements FOR ALL USING (
         auth.uid() IN (SELECT id FROM admin_profiles)
