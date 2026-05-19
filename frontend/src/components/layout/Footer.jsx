@@ -92,9 +92,12 @@ export default function Footer() {
                   </span>
                 </div>
               </Link>
-              <p className="text-sm text-neutral-400 leading-relaxed mb-5">
+              <p className="text-sm text-neutral-400 leading-relaxed mb-4">
                 Sri Lanka&apos;s trusted industrial chemical manufacturing company delivering
                 specialty formulations and technical solutions across multiple industries.
+              </p>
+              <p className="text-xs font-semibold text-accent-400 uppercase tracking-widest mb-6">
+                We Drive You To The Innovation
               </p>
               <div className="flex gap-3">
                 {socialLinks.map((s) => (

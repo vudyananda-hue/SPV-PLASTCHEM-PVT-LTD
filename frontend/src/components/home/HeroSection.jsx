@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, FlaskConical, Beaker, Shield } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { stats } from '../../data/content'
 
 export default function HeroSection() {
@@ -42,12 +43,37 @@ export default function HeroSection() {
       {/* Content */}
       <div className="container-wide mx-auto px-4 sm:px-6 relative z-10 pt-24 pb-16">
         <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-8 animate-fade-in">
-            <div className="w-2 h-2 rounded-full bg-accent-500 animate-pulse" />
-            <span className="text-xs font-medium text-neutral-300 tracking-wide">
-              Sri Lanka&apos;s Trusted Industrial Chemical Partner
-            </span>
+          {/* Badge & Theme */}
+          <div className="flex flex-col gap-4 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass self-start animate-fade-in">
+              <div className="w-2 h-2 rounded-full bg-accent-500 animate-pulse" />
+              <span className="text-xs font-medium text-neutral-300 tracking-wide">
+                Sri Lanka&apos;s Trusted Industrial Chemical Partner
+              </span>
+            </div>
+            
+            {/* Elegant Company Theme */}
+            <div className="overflow-hidden py-1">
+              <motion.h2
+                className="text-base sm:text-lg md:text-xl font-bold uppercase text-accent-400 font-heading"
+                initial={{ opacity: 0, y: 15, letterSpacing: "0.05em" }}
+                animate={{ 
+                  opacity: 1, 
+                  y: 0, 
+                  letterSpacing: "0.2em"
+                }}
+                transition={{ 
+                  duration: 1.2, 
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.1
+                }}
+                style={{
+                  textShadow: '0 0 20px rgba(232, 119, 34, 0.35)'
+                }}
+              >
+                We Drive You To The Innovation
+              </motion.h2>
+            </div>
           </div>
 
           {/* Main heading */}
