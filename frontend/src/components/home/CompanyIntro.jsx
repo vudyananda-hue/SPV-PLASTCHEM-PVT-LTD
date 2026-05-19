@@ -3,10 +3,10 @@ import { ArrowRight, CheckCircle } from 'lucide-react'
 import { company } from '../../data/content'
 
 const highlights = [
-  'ISO-certified quality processes',
-  'In-house R&D capabilities',
-  'Island-wide distribution network',
-  'Custom formulation services',
+  'Global raw materials indenting',
+  'Industrial machinery representation',
+  'Experienced leadership (25+ years)',
+  'Active development & promotion',
 ]
 
 export default function CompanyIntro() {
@@ -23,15 +23,13 @@ export default function CompanyIntro() {
               className="text-3xl md:text-4xl font-bold text-neutral-900 leading-tight mb-6"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              Delivering Industrial Chemical Solutions Since {company.founded}
+              Leading Plastics & Chemical Indenting Agent Since {company.founded}
             </h2>
             <p className="text-neutral-500 text-base leading-relaxed mb-6">
               {company.description}
             </p>
             <p className="text-neutral-500 text-base leading-relaxed mb-8">
-              With over 25 years of experience, we have established ourselves as a reliable partner
-              for industries requiring high-performance chemical products backed by technical
-              expertise and responsive service.
+              Under the leadership of Chairman / Managing Director Dr. Vudyananda Sellahewa, who has experience working with Dow chemical products and other multinationals since 1997, we connect Sri Lankan manufacturers with the world's leading chemical and machinery principals.
             </p>
 
             {/* Highlights Grid */}
@@ -77,14 +75,14 @@ export default function CompanyIntro() {
                 <div className="text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}>
                   25+
                 </div>
-                <div className="text-xs text-neutral-300 uppercase tracking-wider">Years</div>
+                <div className="text-xs text-neutral-300 uppercase tracking-wider">Years Exp</div>
               </div>
 
               <div className="absolute top-1/3 left-6 glass rounded-xl p-4 text-center">
                 <div className="text-2xl font-bold text-accent-400" style={{ fontFamily: 'var(--font-heading)' }}>
-                  500+
+                  11
                 </div>
-                <div className="text-xs text-neutral-300 uppercase tracking-wider">Products</div>
+                <div className="text-xs text-neutral-300 uppercase tracking-wider">Principals</div>
               </div>
 
               {/* Bottom text */}
@@ -94,11 +92,10 @@ export default function CompanyIntro() {
                   className="text-xl font-bold text-white mb-2"
                   style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}
                 >
-                  Manufacturing Excellence
+                  Global Indenting Partners
                 </h3>
                 <p className="text-sm text-neutral-300 leading-relaxed">
-                  State-of-the-art production facilities and rigorous quality control
-                  ensuring consistent product performance across all applications.
+                  Acting as the Marketing Office in Sri Lanka for key multinational enterprises, ensuring a reliable supply of raw materials and machinery.
                 </p>
               </div>
             </div>

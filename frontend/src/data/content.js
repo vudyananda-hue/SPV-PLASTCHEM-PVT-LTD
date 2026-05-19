@@ -19,6 +19,8 @@ import {
   Mail,
   MapPin,
   Globe,
+  Briefcase,
+  Star
 } from 'lucide-react'
 
 /* ================================================================
@@ -27,18 +29,20 @@ import {
 export const company = {
   name: 'S P V Plastchem (Pvt) Ltd',
   shortName: 'SPV Plastchem',
-  tagline: 'Engineering Chemical Excellence',
+  tagline: 'Leading Indenting Agent for Plastics & Chemical Industry',
   description:
-    'A leading Sri Lankan industrial chemical manufacturing company specializing in specialty chemical formulations, rubber processing solutions, construction chemicals, and industrial bonding technologies.',
-  founded: '1995',
-  chairman: 'Dr. Vudyananda Sellahewa',
+    'S P V PLASTCHEM (PVT) LTD is a leading indenting Agent within the geographical territory of Sri Lanka in Supplying raw materials and machinery to the Plastics & Chemical industry. With our expertise and recognition in the industry, we act as an Indenting agent / Marketing office in Sri Lanka for global companies.',
+  founded: '2020',
+  commenced: '01st January 2021',
+  chairman: 'Dr. Vudyananda Sellahewa, FPRI',
   chairmanTitle: 'Chairman / Managing Director',
   chairmanBio:
-    'Dr. Vudyananda Sellahewa brings decades of expertise in industrial chemistry and business leadership. Under his stewardship, S P V Plastchem has grown into a trusted name across multiple industrial sectors in Sri Lanka and beyond, driven by a commitment to innovation, quality, and customer-centric solutions.',
-  phone: '(+94) 117 592 828',
+    'Dr. Vudyananda Sellahewa has experience working with Dow chemical products and other multinational companies since 1997 in Sri Lanka. He is a Fellow Member and served The Plastics and Rubber Institute of Sri Lanka as an Executive Committee member until 2019/2020. With over Twenty-Five years of experience in the Plastics, Chemical, Rubber & Automotive industry, he continuously works on developing and promoting products needed for the industry and focuses on the constant expansion of the organization with more principals.',
+  phone: '(+94) 11 7592828',
+  mobile: '(+94) 777 805655',
   email: 'vudya@spvplastchem.lk',
   address: 'Piliyandala, Sri Lanka',
-  fullAddress: '80A, Jayasena Udawatta Place, New Hadigama Road, Piliyandala (10300), Sri Lanka',
+  fullAddress: 'No. 80 A, Jayasena Udawatta Place, New Hadigama Road, Piliyandala 10300, Sri Lanka',
   website: 'spv-plastchem-eh7g.vercel.app',
 }
 
@@ -49,8 +53,14 @@ export const contactInfo = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '(+94) 117 592 828',
+    value: '(+94) 11 7592828',
     href: 'tel:+94117592828',
+  },
+  {
+    icon: Phone,
+    label: 'Mobile',
+    value: '(+94) 777 805655',
+    href: 'tel:+94777805655',
   },
   {
     icon: Mail,
@@ -61,263 +71,223 @@ export const contactInfo = [
   {
     icon: MapPin,
     label: 'Address',
-    value: '80A, Jayasena Udawatta Place, New Hadigama Road, Piliyandala (10300), Sri Lanka',
+    value: 'No. 80 A, Jayasena Udawatta Place, New Hadigama Road, Piliyandala 10300, Sri Lanka',
     href: null,
   },
-  {
-    icon: Globe,
-    label: 'Website',
-    value: 'spv-plastchem-eh7g.vercel.app',
-    href: 'https://spv-plastchem-eh7g.vercel.app/',
-  },
 ]
+
+export const corporateInfo = {
+  auditors: 'C J Associates. Chartered Accountants, Highlevel Plaza, Delkanda, Nugegoda, Sri Lanka',
+  secretary: 'Premier Consultants Pvt. Ltd',
+  bankers: 'Sampath Bank PLC, Karagampitiya Branch – 182A, Hill Street, Dehiwala, Sri Lanka',
+  memberships: [
+    'The Plastics and Rubber Institute of Sri Lanka (Fellow Member)',
+    'Sri Lanka Institute of Packaging (Life Member)'
+  ]
+}
 
 /* ================================================================
    STATS
    ================================================================ */
 export const stats = [
-  { value: '25+', label: 'Years of Experience' },
-  { value: '500+', label: 'Products Delivered' },
-  { value: '200+', label: 'Industrial Clients' },
-  { value: '4', label: 'Industries Served' },
+  { value: '25+', label: 'Years Experience' },
+  { value: '11', label: 'Global Principals' },
+  { value: '5', label: 'Key Industries' },
+  { value: '2020', label: 'Established' },
 ]
 
 /* ================================================================
-   PRODUCT CATEGORIES
+   PRINCIPALS & PARTNERS
    ================================================================ */
-export const productCategories = [
+export const principals = [
   {
-    id: 'pu-additives',
-    name: 'PU Additives',
-    slug: 'pu-additives',
+    id: 'dow',
+    name: 'DOW CHEMICAL INTERNATIONAL PVT LTD',
+    slug: 'dow-chemical',
     icon: FlaskConical,
-    color: '#3B82F6',
-    shortDescription:
-      'High-performance polyurethane additives for enhanced material properties.',
-    description:
-      'Our PU Additives are engineered to improve the performance, durability, and processing characteristics of polyurethane systems. These specialty chemicals serve as catalysts, stabilizers, and property enhancers across flexible foam, rigid foam, coatings, adhesives, sealants, and elastomer applications.',
-    applications: [
-      'Flexible & rigid foam production',
-      'Polyurethane coatings & sealants',
-      'Automotive interior components',
-      'Insulation systems',
-      'Footwear manufacturing',
-    ],
+    color: '#E11D48',
+    shortDescription: 'Paint & Coating Industry, Polyurethane & Systems (Binders)',
+    description: 'We act as an Indenting agent / Marketing office for DOW CHEMICAL INTERNATIONAL PVT LTD, specializing in raw materials for the Paint & Coating Industry, and Polyurethane & Systems (Binders).',
+    applications: ['Paint & Coating Formulation', 'Polyurethane Foams', 'Industrial Binders'],
     products: [
-      {
-        name: 'SPV-PU 101 Catalyst',
-        description: 'Amine-based catalyst for flexible foam systems with balanced blow/gel activity.',
-        specs: { 'Active Content': '≥99%', 'Viscosity': '5-10 cP', 'Density': '0.89 g/cm³' },
-      },
-      {
-        name: 'SPV-PU 202 Stabilizer',
-        description: 'Silicone-based cell stabilizer for uniform foam cell structure.',
-        specs: { 'Active Content': '≥98%', 'pH Range': '6.5-7.5', 'Shelf Life': '12 months' },
-      },
-      {
-        name: 'SPV-PU 303 Chain Extender',
-        description: 'Diol-based chain extender for improved mechanical properties in elastomers.',
-        specs: { 'Purity': '≥99.5%', 'Molecular Weight': '90-110', 'Form': 'Liquid' },
-      },
-    ],
+      { name: 'Polyurethane Binders', description: 'High-performance polyurethane binders for industrial systems.', specs: { 'Origin': 'Global', 'Quality': 'Premium' } },
+      { name: 'Paint & Coating Materials', description: 'Raw materials for commercial and industrial paint formulations.', specs: { 'Type': 'Raw Materials' } }
+    ]
   },
   {
-    id: 'surface-finishes',
-    name: 'Surface Finishes',
-    slug: 'surface-finishes',
-    icon: Paintbrush,
-    color: '#8B5CF6',
-    shortDescription:
-      'Premium surface finishing chemicals for industrial coating applications.',
-    description:
-      'Our Surface Finish solutions provide superior coating performance, adhesion, and aesthetic quality for metal, wood, and composite substrates. Formulated for demanding industrial environments, these products deliver consistent results in automated and manual application processes.',
-    applications: [
-      'Metal surface treatment',
-      'Automotive refinishing',
-      'Industrial coating systems',
-      'Wood finishing & lacquers',
-      'Decorative & protective coatings',
-    ],
+    id: 'angus',
+    name: 'ANGUS CHEMICAL',
+    slug: 'angus-chemical',
+    icon: Beaker,
+    color: '#2563EB',
+    shortDescription: 'Amino – AMP Dispersant AMP 95',
+    description: 'Supplying Amino – AMP Dispersant, a multifunctional specialty additive containing 2-amino-2-methyl-1-Propanol AMP 95.',
+    applications: ['Water-Based Coatings', 'Pigment Dispersion', 'pH Stabilization'],
     products: [
-      {
-        name: 'SPV-SF 100 Primer',
-        description: 'Universal primer for multi-substrate adhesion with excellent corrosion protection.',
-        specs: { 'Coverage': '10-12 m²/L', 'Dry Time': '30 min', 'VOC': '<250 g/L' },
-      },
-      {
-        name: 'SPV-SF 200 Clear Coat',
-        description: 'High-gloss clear coat with UV resistance and scratch-resistant finish.',
-        specs: { 'Gloss Level': '90+ GU', 'UV Stability': 'Excellent', 'Hardness': '2H pencil' },
-      },
-      {
-        name: 'SPV-SF 300 Hardener',
-        description: 'Isocyanate-based hardener for two-component coating systems.',
-        specs: { 'NCO Content': '21.5%', 'Mix Ratio': '2:1', 'Pot Life': '4-6 hours' },
-      },
-    ],
+      { name: 'AMP-95 Additive', description: 'Amino-AMP Dispersant acting as a multifunctional specialty additive containing 2-amino-2-methyl-1-Propanol.', specs: { 'Concentration': 'AMP 95', 'Grade': 'Industrial' } }
+    ]
   },
   {
-    id: 'construction-chemicals',
-    name: 'Construction Chemicals',
-    slug: 'construction-chemicals',
-    icon: HardHat,
-    color: '#F59E0B',
-    shortDescription:
-      'Engineered chemical solutions for modern construction applications.',
-    description:
-      'Our Construction Chemical range addresses critical needs in waterproofing, concrete admixtures, tile adhesives, and structural repair. These products are formulated to meet international construction standards while being optimized for tropical climate conditions.',
-    applications: [
-      'Waterproofing systems',
-      'Concrete admixtures & plasticizers',
-      'Tile adhesives & grouts',
-      'Structural repair compounds',
-      'Floor hardening & sealing',
-    ],
+    id: 'dupont',
+    name: 'DU PONT (DOW) - DDP',
+    slug: 'dupont',
+    icon: Link2,
+    color: '#059669',
+    shortDescription: 'Rubber to Metal Bonding, Construction & Auto',
+    description: 'Providing Rubber to Metal Bonding Adhesives, Construction Chemicals, and Automotive solutions.',
+    applications: ['Rubber Vulcanization Bonding', 'Construction Formulations', 'Automotive Assembly'],
     products: [
-      {
-        name: 'SPV-CC 100 Waterproofer',
-        description: 'Integral waterproofing compound for concrete and mortar applications.',
-        specs: { 'Dosage': '0.5-1% by weight', 'Setting Time': 'Normal', 'Chloride': 'Free' },
-      },
-      {
-        name: 'SPV-CC 200 Plasticizer',
-        description: 'High-range water reducer for workable, high-strength concrete.',
-        specs: { 'Water Reduction': '15-25%', 'Slump Retention': '60 min', 'Compliance': 'SLS/ASTM' },
-      },
-      {
-        name: 'SPV-CC 300 Tile Adhesive',
-        description: 'Polymer-modified tile adhesive for interior and exterior applications.',
-        specs: { 'Pot Life': '4 hours', 'Open Time': '20 min', 'Coverage': '4-5 kg/m²' },
-      },
-    ],
+      { name: 'Rubber to Metal Bonding Adhesive', description: 'Specialty adhesives engineered for high-strength rubber-to-metal bonding.', specs: { 'Strength': 'High-strength', 'Cure Type': 'Heat' } },
+      { name: 'Construction Additives', description: 'Advanced additives for building material enhancement.', specs: { 'Application': 'Construction' } }
+    ]
   },
   {
-    id: 'reclaim-rubber',
-    name: 'Reclaim Rubber',
-    slug: 'reclaim-rubber',
+    id: 'idex',
+    name: 'IDEX - (USA)',
+    slug: 'idex',
+    icon: Factory,
+    color: '#D97706',
+    shortDescription: 'Dispensing and mixing machines for Paint Industry',
+    description: 'Supplying dispensing and mixing machines specifically designed for the Paint Industry.',
+    applications: ['Paint Dispensing', 'Industrial Mixing', 'Retail Color Tinting'],
+    products: [
+      { name: 'Dispensing & Mixing Machines', description: 'Precision mixing and dispensing machinery for paint and coating manufacturers.', specs: { 'Origin': 'USA', 'Support': 'Local Technical' } }
+    ]
+  },
+  {
+    id: 'evonik',
+    name: 'Evonik India Pvt. Ltd. (France)',
+    slug: 'evonik',
+    icon: Target,
+    color: '#7C3AED',
+    shortDescription: 'Polyurethane Additives',
+    description: 'Marketing office for Polyurethane Additives from Evonik.',
+    applications: ['Polyurethane Foam Catalysis', 'Cell Stabilization', 'Surfactant Enhancement'],
+    products: [
+      { name: 'Polyurethane Additives', description: 'Specialty catalysts and surfactants to optimize PU system manufacturing.', specs: { 'Origin': 'Evonik France' } }
+    ]
+  },
+  {
+    id: 'seiko',
+    name: 'SEIKO USA',
+    slug: 'seiko',
+    icon: Briefcase,
+    color: '#475569',
+    shortDescription: 'Smart label printers / Labels',
+    description: 'Supplying Smart label printers and Labels from SEIKO USA.',
+    applications: ['Industrial Labeling', 'Barcode Printing', 'Smart Inventory Control'],
+    products: [
+      { name: 'Smart Label Printers', description: 'High-precision smart hardware for commercial and logistics label printing.', specs: { 'Brand': 'SEIKO', 'Connectivity': 'Smart / USB / Network' } },
+      { name: 'High-Durability Labels', description: 'Labels resistant to chemicals, moisture, and extreme temperatures.', specs: { 'Type': 'Premium Labels' } }
+    ]
+  },
+  {
+    id: 'soujanya',
+    name: 'SOUJANYA Color India',
+    slug: 'soujanya',
+    icon: Palette,
+    color: '#EC4899',
+    shortDescription: 'Pigment Colorants/ Pastes (PU, PAINT, RUBBER)',
+    description: 'Providing Pigment Colorants and Pastes for PU, Paint, and Rubber industries.',
+    applications: ['Polyurethane Coloring', 'Paint Tinting', 'Rubber Compounding'],
+    products: [
+      { name: 'Pigment Colorants & Pastes', description: 'Vibrant, high-stability pigment pastes for coloring PU systems, paints, and rubber compounds.', specs: { 'Origin': 'Soujanya India' } }
+    ]
+  },
+  {
+    id: 'yong-fong',
+    name: 'YONG FONG RUBBER INDUSTRIES SDN. BHD',
+    slug: 'yong-fong',
     icon: Recycle,
     color: '#10B981',
-    shortDescription:
-      'Sustainable reclaimed rubber products for cost-effective manufacturing.',
-    description:
-      'Our Reclaim Rubber products are manufactured through advanced devulcanization processes, providing an economical and environmentally responsible alternative to virgin rubber. These materials maintain excellent processing characteristics and mechanical properties suitable for a wide range of rubber goods.',
-    applications: [
-      'Tire retreading & manufacturing',
-      'Rubber mats & flooring',
-      'Automotive rubber parts',
-      'Conveyor belts',
-      'Moulded rubber goods',
-    ],
+    shortDescription: 'Reclaimed Rubber',
+    description: 'Supplying Reclaimed Rubber from Yong Fong Rubber Industries.',
+    applications: ['Tire Manufacturing', 'Rubber Flooring & Mats', 'Moulded Rubber Goods'],
     products: [
-      {
-        name: 'SPV-RR 100 Whole Tire Reclaim',
-        description: 'General-purpose reclaimed rubber from whole tire feedstock.',
-        specs: { 'Tensile Strength': '≥8 MPa', 'Elongation': '≥300%', 'Ash Content': '<8%' },
-      },
-      {
-        name: 'SPV-RR 200 Butyl Reclaim',
-        description: 'Reclaimed butyl rubber for inner tubes and sealing applications.',
-        specs: { 'Mooney Viscosity': '40-55', 'Moisture': '<0.75%', 'Specific Gravity': '1.14' },
-      },
-      {
-        name: 'SPV-RR 300 EPDM Reclaim',
-        description: 'Reclaimed EPDM rubber for weather-resistant applications.',
-        specs: { 'Tensile': '≥6 MPa', 'Elongation': '≥250%', 'Color': 'Black' },
-      },
-    ],
+      { name: 'Reclaimed Rubber', description: 'Sustainable, high-quality devulcanized reclaimed rubber to optimize manufacturing costs.', specs: { 'Origin': 'Malaysia', 'Grade': 'Premium' } }
+    ]
   },
   {
-    id: 'rubber-to-metal-bonding',
-    name: 'Rubber-to-Metal Bonding Adhesives',
-    slug: 'rubber-to-metal-bonding',
-    icon: Link2,
-    color: '#EF4444',
-    shortDescription:
-      'High-strength bonding adhesives for rubber-to-metal applications.',
-    description:
-      'Our Rubber-to-Metal Bonding Adhesives are formulated for permanent, high-strength bonds between vulcanized or unvulcanized rubber compounds and metal substrates. These systems are engineered for critical applications in automotive, industrial, and engineering components where bond integrity is paramount.',
-    applications: [
-      'Engine mounts & vibration dampeners',
-      'Automotive bushings & bearings',
-      'Industrial rollers & wheels',
-      'Bridge bearings',
-      'Mining equipment components',
-    ],
+    id: 'malion',
+    name: 'MALION NEW MATERIALS CO., LTD',
+    slug: 'malion',
+    icon: Paintbrush,
+    color: '#0EA5E9',
+    shortDescription: 'Pigment Master Batch (White, Black)',
+    description: 'Marketing Pigment Master Batch (White, Black) for various applications.',
+    applications: ['Plastic Film Extrusion', 'Injection Moulding', 'Blow Moulding'],
     products: [
-      {
-        name: 'SPV-RMB 100 Primer',
-        description: 'Single-coat primer for rubber-to-metal bonding systems.',
-        specs: { 'Coverage': '8-10 m²/L', 'Flash Point': '4°C', 'Bond Strength': '>15 N/mm' },
-      },
-      {
-        name: 'SPV-RMB 200 Adhesive',
-        description: 'One-coat bonding agent for vulcanization bonding of rubber to metal.',
-        specs: { 'Cure Temp': '140-180°C', 'Coverage': '6-8 m²/L', 'Substrates': 'Steel/Aluminum' },
-      },
-      {
-        name: 'SPV-RMB 300 Post-Vulcanization',
-        description: 'Cold-bonding adhesive for post-cure rubber-to-metal applications.',
-        specs: { 'Cure Time': '24-48 hrs', 'Temp Range': '-40 to +120°C', 'Type': 'Two-component' },
-      },
-    ],
+      { name: 'Pigment Master Batch (White & Black)', description: 'Premium grade black and white color masterbatches for the plastics industry.', specs: { 'Origin': 'Malion China' } }
+    ]
   },
+  {
+    id: 'micas',
+    name: 'MICAS ORGANICS LIMITED',
+    slug: 'micas',
+    icon: Star,
+    color: '#F59E0B',
+    shortDescription: 'Color Pigment',
+    description: 'Supplying Color Pigments from Micas Organics Limited.',
+    applications: ['Industrial Coating Pigments', 'Ink Formulations', 'Plastic Coloration'],
+    products: [
+      { name: 'Color Pigments', description: 'High-purity organic and inorganic pigments for color‑critical manufacturing.', specs: { 'Brand': 'Micas Organics' } }
+    ]
+  },
+  {
+    id: 'manali',
+    name: 'MANALI PETRO CHEMICALS',
+    slug: 'manali',
+    icon: FlaskConical,
+    color: '#8B5CF6',
+    shortDescription: 'Polyol',
+    description: 'Supplying Polyol from Manali Petro Chemicals.',
+    applications: ['Polyurethane Foams', 'Elastomers', 'Coatings & Adhesives'],
+    products: [
+      { name: 'Polyol', description: 'High-quality polyols for flexible and rigid foam production.', specs: { 'Brand': 'Manali' } }
+    ]
+  }
 ]
+
+export const productCategories = principals;
 
 /* ================================================================
    INDUSTRIES SERVED
    ================================================================ */
 export const industries = [
   {
-    id: 'rubber',
-    name: 'Rubber Industry',
-    icon: Factory,
-    description:
-      'Comprehensive chemical solutions for rubber compounding, processing, and vulcanization across tire, footwear, and industrial rubber goods manufacturing.',
-    solutions: [
-      'Rubber processing chemicals',
-      'Reclaim rubber supply',
-      'Vulcanization bonding systems',
-      'Quality control additives',
-    ],
+    id: 'paint',
+    name: 'Paint and Coating',
+    icon: Palette,
+    description: 'Supplying raw materials, additives, and dispensing machinery for Paint and Coating manufacturers of Sri Lanka.',
+    solutions: ['Pigment Colorants', 'AMP Dispersants', 'Dispensing Machines', 'Binders'],
   },
   {
-    id: 'paint-coatings',
-    name: 'Paint & Coatings Industry',
-    icon: Palette,
-    description:
-      'Specialty additives and raw materials for paint formulations, industrial coatings, and surface finishing systems delivering superior performance and aesthetics.',
-    solutions: [
-      'Surface finishing agents',
-      'Coating hardeners & catalysts',
-      'Pigment dispersants',
-      'Performance additives',
-    ],
+    id: 'rubber',
+    name: 'Rubber Products',
+    icon: Factory,
+    description: 'Providing bonding adhesives, reclaimed rubber, and colorants for Rubber Products manufacturers of Sri Lanka.',
+    solutions: ['Rubber to Metal Bonding', 'Reclaimed Rubber', 'Pigment Pastes'],
+  },
+  {
+    id: 'plastic',
+    name: 'Plastic Processing & Packaging',
+    icon: Briefcase,
+    description: 'Serving the Plastic processing and Packaging Industries of Sri Lanka with masterbatches and raw materials.',
+    solutions: ['Pigment Master Batch', 'Smart Label Printers', 'Packaging Solutions'],
   },
   {
     id: 'construction',
-    name: 'Construction Sector',
+    name: 'Construction & Cement',
     icon: Building2,
-    description:
-      'Engineered chemical products for modern construction — from waterproofing and concrete admixtures to tile adhesives and structural repair solutions.',
-    solutions: [
-      'Waterproofing compounds',
-      'Concrete plasticizers',
-      'Tile adhesives & grouts',
-      'Repair & protection systems',
-    ],
+    description: 'Providing construction chemicals and raw materials for the Construction & Cement manufacturing Industries of Sri Lanka.',
+    solutions: ['Construction Chemicals', 'Bonding Adhesives'],
   },
   {
-    id: 'manufacturing',
-    name: 'Industrial Manufacturing',
+    id: 'pu',
+    name: 'Polyurethane / Automotive',
     icon: Wrench,
-    description:
-      'PU additives, bonding agents, and specialty chemicals serving diverse manufacturing processes across automotive, electronics, and consumer goods industries.',
-    solutions: [
-      'PU system additives',
-      'Industrial adhesives',
-      'Process chemicals',
-      'Custom formulations',
-    ],
+    description: 'Supplying PU additives, binders, and polyol for the Polyurethane Industry and Automotive Industry.',
+    solutions: ['Polyurethane Additives', 'Polyol', 'PU Systems (Binders)'],
   },
 ]
 
@@ -327,39 +297,23 @@ export const industries = [
 export const whyChooseUs = [
   {
     icon: Shield,
-    title: 'Quality Assurance',
-    description:
-      'Rigorous quality control processes ensure every product meets international standards and specifications.',
+    title: 'Industry Expertise',
+    description: 'Over 25 years of specialized experience in Plastics, Chemical, Rubber & Automotive industries under our MD.',
   },
   {
-    icon: Beaker,
-    title: 'R&D Excellence',
-    description:
-      'In-house research and development capabilities enable custom formulations and continuous innovation.',
-  },
-  {
-    icon: Clock,
-    title: 'Reliable Supply',
-    description:
-      'Consistent product availability with efficient logistics and inventory management across Sri Lanka.',
+    icon: Globe,
+    title: 'Global Principals',
+    description: 'Representing top-tier global multinational companies as their indenting agent and marketing office.',
   },
   {
     icon: Award,
-    title: 'Industry Experience',
-    description:
-      'Over 25 years of deep expertise in industrial chemistry serving diverse market sectors.',
-  },
-  {
-    icon: Users,
-    title: 'Technical Support',
-    description:
-      'Dedicated technical team providing application guidance, troubleshooting, and on-site assistance.',
+    title: 'Recognized Leadership',
+    description: 'Led by a Fellow Member of The Plastics and Rubber Institute of Sri Lanka.',
   },
   {
     icon: TrendingUp,
-    title: 'Innovation Focus',
-    description:
-      'Continuous development of new formulations to address evolving industrial challenges and requirements.',
+    title: 'Continuous Expansion',
+    description: 'Constantly working on the development and promotion of products needed for the industry.',
   },
 ]
 
@@ -368,34 +322,24 @@ export const whyChooseUs = [
    ================================================================ */
 export const companyHistory = [
   {
-    year: '1995',
-    title: 'Company Founded',
-    description: 'S P V Plastchem (Pvt) Ltd established in Colombo with a focus on specialty chemical trading.',
+    year: '1997',
+    title: 'Industry Foundation',
+    description: 'Dr. Vudyananda Sellahewa began his extensive career working with Dow chemical products and other multinationals.',
   },
   {
-    year: '2002',
-    title: 'Manufacturing Operations',
-    description: 'Expanded into chemical manufacturing with dedicated production facilities.',
+    year: '2020',
+    title: 'Company Established',
+    description: 'S P V Plastchem (Pvt) Ltd was established on November 30th, 2020.',
   },
   {
-    year: '2008',
-    title: 'Product Line Expansion',
-    description: 'Launched construction chemicals and rubber processing solutions divisions.',
+    year: '2021',
+    title: 'Business Commenced',
+    description: 'Official business operations commenced on January 1st, 2021 as an Indenting Agent.',
   },
   {
-    year: '2014',
-    title: 'R&D Center Established',
-    description: 'Opened in-house research laboratory for custom formulation development.',
-  },
-  {
-    year: '2019',
-    title: 'Market Leadership',
-    description: 'Became a leading supplier of rubber-to-metal bonding adhesives in Sri Lanka.',
-  },
-  {
-    year: '2024',
-    title: 'Digital Transformation',
-    description: 'Launched digital platform for enhanced customer engagement and service delivery.',
+    year: 'Present',
+    title: 'Global Partnerships',
+    description: 'Acting as the Marketing Office in Sri Lanka for 11 global companies across multiple sectors.',
   },
 ]
 
@@ -405,22 +349,17 @@ export const companyHistory = [
 export const corporateValues = [
   {
     icon: Target,
-    title: 'Customer Focus',
-    description: 'We prioritize understanding and meeting our customers\' unique requirements.',
+    title: 'Quality Sourcing',
+    description: 'Connecting Sri Lankan industries with high-quality raw materials and machinery globally.',
   },
   {
     icon: Shield,
-    title: 'Integrity',
-    description: 'Ethical business practices and transparency in every interaction.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Innovation',
-    description: 'Continuous improvement and investment in new technologies and solutions.',
+    title: 'Reliability',
+    description: 'Ensuring consistent supply and trustworthy relationships with both principals and clients.',
   },
   {
     icon: Users,
-    title: 'Collaboration',
-    description: 'Building lasting partnerships with clients, suppliers, and communities.',
+    title: 'Industry Development',
+    description: 'Promoting products that drive forward the capabilities of local manufacturing sectors.',
   },
 ]

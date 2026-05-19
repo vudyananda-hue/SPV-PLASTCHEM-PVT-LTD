@@ -30,17 +30,17 @@ const quickLinks = [
 ]
 
 const productLinks = [
-  { label: 'PU Additives', path: '/products?category=pu-additives' },
-  { label: 'Surface Finishes', path: '/products?category=surface-finishes' },
-  { label: 'Construction Chemicals', path: '/products?category=construction-chemicals' },
-  { label: 'Reclaim Rubber', path: '/products?category=reclaim-rubber' },
-  { label: 'Bonding Adhesives', path: '/products?category=rubber-to-metal-bonding' },
+  { label: 'Dow Chemical', path: '/products?category=dow-chemical' },
+  { label: 'Angus Chemical', path: '/products?category=angus-chemical' },
+  { label: 'DuPont (Dow) DDP', path: '/products?category=dupont' },
+  { label: 'Evonik India', path: '/products?category=evonik' },
+  { label: 'Yong Fong Rubber', path: '/products?category=yong-fong' },
 ]
 
 const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/s-p-v-plastchem-pvt-ltd/?originalSubdomain=lk', Icon: LinkedinIcon },
   { label: 'Facebook', href: 'https://web.facebook.com/spvplastchempvtltd5887/?_rdc=1&_rdr#', Icon: FacebookIcon },
-  { label: 'WhatsApp', href: 'https://wa.me/94777317030', Icon: WhatsappIcon },
+  { label: 'WhatsApp', href: 'https://wa.me/94777805655', Icon: WhatsappIcon },
 ]
 
 export default function Footer() {
@@ -60,7 +60,7 @@ export default function Footer() {
                 Ready to Partner with Us?
               </h3>
               <p className="text-neutral-300 text-base">
-                Let&apos;s discuss how our chemical solutions can support your manufacturing needs.
+                Let&apos;s discuss how our chemical solutions and global partnerships can support your manufacturing needs.
               </p>
             </div>
             <Link
@@ -100,8 +100,7 @@ export default function Footer() {
                 </div>
               </Link>
               <p className="text-sm text-neutral-400 leading-relaxed mb-4">
-                Sri Lanka&apos;s trusted industrial chemical manufacturing company delivering
-                specialty formulations and technical solutions across multiple industries.
+                A leading indenting Agent and Marketing Office in Sri Lanka supplying raw materials and machinery to the Plastics & Chemical industry.
               </p>
               <p className="text-xs font-semibold text-accent-400 uppercase tracking-widest mb-6">
                 We Drive You To The Innovation

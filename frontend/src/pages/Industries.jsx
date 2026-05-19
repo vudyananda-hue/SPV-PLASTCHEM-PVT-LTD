@@ -62,8 +62,8 @@ export default function Industries() {
       {/* CTA */}
       <section className="py-16" style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1B2D4A 100%)' }}>
         <div className="container-wide mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 animate-scale-up" style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}>Need a Custom Solution?</h2>
-          <p className="text-neutral-300 mb-8 max-w-xl mx-auto">Our R&D team can develop tailored chemical formulations for your specific industrial requirements.</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}>Need a Specific Sourcing Solution?</h2>
+          <p className="text-neutral-300 mb-8 max-w-xl mx-auto">We work closely with our global partners and principals to secure the exact raw materials and machinery required for your custom manufacturing specifications.</p>
           <Link to="/contact" className="btn-primary text-base !py-3 !px-8">
             Discuss Your Requirements <ArrowRight className="w-5 h-5" />
           </Link>

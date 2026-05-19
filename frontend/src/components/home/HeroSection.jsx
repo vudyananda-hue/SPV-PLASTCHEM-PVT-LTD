@@ -118,9 +118,9 @@ export default function HeroSection() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold text-white leading-[1.1] mb-6 animate-slide-up"
             style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}
           >
-            Engineering{' '}
-            <span className="gradient-text">Chemical</span>{' '}
-            Excellence for Industry
+            Leading{' '}
+            <span className="gradient-text">Indenting Agent</span>{' '}
+            & Marketing Office
           </h1>
 
           {/* Subtitle */}
@@ -128,8 +128,7 @@ export default function HeroSection() {
             className="text-lg md:text-xl text-neutral-300 leading-relaxed mb-10 max-w-2xl animate-slide-up"
             style={{ animationDelay: '0.15s' }}
           >
-            Specialty chemical formulations, rubber processing solutions, construction chemicals, and
-            industrial bonding technologies — engineered for performance, trusted by industry.
+            Supplying premium raw materials and machinery to the Plastics, Chemical, Rubber, and Automotive industries in Sri Lanka. Representing world-class global principals.
           </p>
 
           {/* CTA Buttons */}

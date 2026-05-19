@@ -4,6 +4,7 @@ import { Send, X, ChevronRight } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { productCategories } from '../data/content'
 import { api } from '../lib/api'
+import BrandLogo from '../components/common/BrandLogo'
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -79,8 +80,8 @@ export default function Products() {
               <div key={cat.id} className="mb-16 last:mb-0" id={`category-${cat.id}`}>
                 {/* Category Header */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${cat.color}15`, color: cat.color }}>
-                    <Icon className="w-6 h-6" />
+                  <div className="h-12 flex items-center justify-start transition-transform group-hover:scale-105 origin-left">
+                    <BrandLogo slug={cat.slug} className="h-10 w-auto object-contain" />
                   </div>
                   <div>
                     <h2 className="text-2xl font-bold text-neutral-900" style={{ fontFamily: 'var(--font-heading)' }}>{cat.name}</h2>
