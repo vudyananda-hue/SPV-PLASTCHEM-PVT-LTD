@@ -15,6 +15,12 @@ const FacebookIcon = () => (
   </svg>
 )
 
+const WhatsappIcon = () => (
+  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12.004 0C5.378 0 .004 5.374.004 12c0 2.113.547 4.178 1.59 5.992L0 24l6.17-1.618C7.88 23.314 9.9 23.856 12 23.856c6.626 0 12-5.375 12-12s-5.374-12-11.996-12zm6.304 17.078c-.26.732-1.288 1.332-1.785 1.393-.47.057-.932.186-2.998-.67-2.64-1.092-4.305-3.8-4.436-3.98-.13-.178-1.077-1.435-1.077-2.738 0-1.302.68-1.942.92-2.203.24-.26.522-.326.696-.326.173 0 .347.003.5.01.164.008.384-.06.6.474.223.55.76 1.854.826 1.987.067.132.112.285.023.46-.089.176-.134.307-.267.46-.134.155-.282.347-.402.467-.134.133-.275.277-.116.55.158.272.7 1.155 1.503 1.868.803.714 1.48 1.144 1.69 1.252.21.109.332.092.455-.05.123-.142.53-.615.67-.822.143-.207.286-.176.48-.102.193.073 1.22.576 1.43.684.21.109.35.163.4.25.05.088.05.512-.21 1.244z"/>
+  </svg>
+)
+
 const quickLinks = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
@@ -34,6 +40,7 @@ const productLinks = [
 const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/s-p-v-plastchem-pvt-ltd/?originalSubdomain=lk', Icon: LinkedinIcon },
   { label: 'Facebook', href: 'https://web.facebook.com/spvplastchempvtltd5887/?_rdc=1&_rdr#', Icon: FacebookIcon },
+  { label: 'WhatsApp', href: 'https://wa.me/94777317030', Icon: WhatsappIcon },
 ]
 
 export default function Footer() {
