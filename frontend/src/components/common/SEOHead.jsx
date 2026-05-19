@@ -5,7 +5,7 @@ export default function SEOHead({ title, description, path = '' }) {
   const fullTitle = title ? `${title} | ${siteName}` : `${siteName} | Industrial Chemical Solutions`
   const defaultDescription =
     'S P V Plastchem (Pvt) Ltd — Sri Lanka\'s trusted industrial chemical manufacturing company. Specialty chemical formulations, rubber processing, construction chemicals.'
-  const siteUrl = 'https://spvplastchem.com'
+  const siteUrl = 'https://spv-plastchem-eh7g.vercel.app'
 
   return (
     <Helmet>

@@ -39,7 +39,7 @@ export const company = {
   email: 'vudya@spvplastchem.lk',
   address: 'Piliyandala, Sri Lanka',
   fullAddress: '80A, Jayasena Udawatta Place, New Hadigama Road, Piliyandala (10300), Sri Lanka',
-  website: 'www.spvplastchem.com',
+  website: 'spv-plastchem-eh7g.vercel.app',
 }
 
 /* ================================================================
@@ -67,8 +67,8 @@ export const contactInfo = [
   {
     icon: Globe,
     label: 'Website',
-    value: 'www.spvplastchem.com',
-    href: 'https://www.spvplastchem.com',
+    value: 'spv-plastchem-eh7g.vercel.app',
+    href: 'https://spv-plastchem-eh7g.vercel.app/',
   },
 ]
 
