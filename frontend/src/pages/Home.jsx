@@ -4,6 +4,7 @@ import CompanyIntro from '../components/home/CompanyIntro'
 import ProductHighlights from '../components/home/ProductHighlights'
 import IndustriesServed from '../components/home/IndustriesServed'
 import WhyChooseUs from '../components/home/WhyChooseUs'
+import GlobalCredentials from '../components/home/GlobalCredentials'
 import ContactPreview from '../components/home/ContactPreview'
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <ProductHighlights />
       <IndustriesServed />
       <WhyChooseUs />
+      <GlobalCredentials />
       <ContactPreview />
     </>
   )
