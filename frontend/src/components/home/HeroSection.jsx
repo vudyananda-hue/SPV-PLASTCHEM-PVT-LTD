@@ -55,23 +55,60 @@ export default function HeroSection() {
             {/* Elegant Company Theme */}
             <div className="overflow-hidden py-1">
               <motion.h2
-                className="text-base sm:text-lg md:text-xl font-bold uppercase text-accent-400 font-heading"
-                initial={{ opacity: 0, y: 15, letterSpacing: "0.05em" }}
-                animate={{ 
-                  opacity: 1, 
-                  y: 0, 
-                  letterSpacing: "0.2em"
+                className="text-base sm:text-lg md:text-xl font-bold uppercase font-heading flex flex-wrap gap-x-2 gap-y-1"
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.08,
+                      delayChildren: 0.1
+                    }
+                  }
                 }}
-                transition={{ 
-                  duration: 1.2, 
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: 0.1
-                }}
-                style={{
-                  textShadow: '0 0 20px rgba(232, 119, 34, 0.35)'
-                }}
+                initial="hidden"
+                animate="visible"
               >
-                We Drive You To The Innovation
+                {/* Regular Words */}
+                {["We", "Drive", "You", "To", "The"].map((word, i) => (
+                  <motion.span
+                    key={i}
+                    className="text-neutral-300 inline-block"
+                    variants={{
+                      hidden: { opacity: 0, y: 10, letterSpacing: "0.05em" },
+                      visible: { 
+                        opacity: 1, 
+                        y: 0, 
+                        letterSpacing: "0.15em",
+                        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+                      }
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+                
+                {/* Featured Word "Innovation" */}
+                <motion.span
+                  className="gradient-text inline-block font-extrabold"
+                  variants={{
+                    hidden: { opacity: 0, y: 15, scale: 0.9, letterSpacing: "0.05em" },
+                    visible: { 
+                      opacity: 1, 
+                      y: 0, 
+                      scale: 1,
+                      letterSpacing: "0.2em",
+                      transition: { 
+                        duration: 1.2, 
+                        ease: [0.16, 1, 0.3, 1]
+                      }
+                    }
+                  }}
+                  style={{
+                    textShadow: '0 0 25px rgba(232, 119, 34, 0.45)'
+                  }}
+                >
+                  Innovation
+                </motion.span>
               </motion.h2>
             </div>
           </div>
