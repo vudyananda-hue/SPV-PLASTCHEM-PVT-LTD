@@ -68,9 +68,9 @@ export default function BrandLogo({ slug, className = "h-8 w-auto" }) {
       )
     case 'yong-fong':
       return (
-        <svg viewBox="0 0 180 50" className={className}>
+        <svg viewBox="0 0 220 50" className={className}>
           {/* Yong Fong Rubber Logo */}
-          <rect width="180" height="50" rx="4" fill="#14532D" />
+          <rect width="220" height="50" rx="4" fill="#14532D" />
           <circle cx="25" cy="25" r="18" fill="none" stroke="#22C55E" strokeWidth="2" />
           <path d="M15,25 Q25,15 35,25 Q25,35 15,25 Z" fill="none" stroke="#22C55E" strokeWidth="1" />
           <line x1="25" y1="7" x2="25" y2="43" stroke="#22C55E" strokeWidth="1" />
