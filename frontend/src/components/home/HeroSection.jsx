@@ -181,7 +181,7 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <ChevronDown className="w-6 h-6 text-neutral-400" />
+        <ChevronDown className="w-8 h-8 text-accent-500" />
       </div>
 
       {/* Bottom gradient fade */}
