@@ -106,7 +106,7 @@ export const principals = [
     slug: 'dow-chemical',
     icon: FlaskConical,
     color: '#E11D48',
-    shortDescription: 'Paint & Coating Industry, Polyurethane & Systems (Binders)',
+    shortDescription: '',
     description: 'We act as an Indenting agent / Marketing office for DOW CHEMICAL INTERNATIONAL PVT LTD, specializing in raw materials for the Paint & Coating Industry, and Polyurethane & Systems (Binders).',
     applications: ['Paint & Coating Industry.', 'Polyurethane & Systems.', 'Industrial Binders'],
     products: [
