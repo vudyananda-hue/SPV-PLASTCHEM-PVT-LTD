@@ -200,7 +200,7 @@ export const principals = [
     slug: 'yong-fong',
     icon: Recycle,
     color: '#10B981',
-    shortDescription: 'Reclaimed Rubber',
+    shortDescription: '',
     description: 'Supplying Reclaimed Rubber from Yong Fong Rubber Industries.',
     applications: ['Tire Manufacturing', 'Rubber Flooring & Mats', 'Moulded Rubber Goods'],
     products: [
