@@ -120,7 +120,7 @@ export const principals = [
     slug: 'angus-chemical',
     icon: Beaker,
     color: '#2563EB',
-    shortDescription: 'Amino – AMP Dispersant AMP 95',
+    shortDescription: '',
     description: 'Supplying Amino – AMP Dispersant, a multifunctional specialty additive containing 2-amino-2-methyl-1-Propanol AMP 95.',
     applications: ['Water-Based Coatings', 'Pigment Dispersion', 'pH Stabilization'],
     products: [
@@ -239,7 +239,7 @@ export const principals = [
     slug: 'manali',
     icon: FlaskConical,
     color: '#8B5CF6',
-    shortDescription: 'Polyol',
+    shortDescription: '',
     description: 'Supplying Polyol from Manali Petro Chemicals.',
     applications: ['Polyurethane & Systems.', 'Elastomers', 'Coatings & Adhesives'],
     products: [
