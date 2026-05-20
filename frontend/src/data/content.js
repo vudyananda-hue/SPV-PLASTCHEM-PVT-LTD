@@ -228,9 +228,9 @@ export const principals = [
     color: '#F59E0B',
     shortDescription: 'Color Pigment',
     description: 'Supplying Color Pigments from Micas Organics Limited.',
-    applications: ['Industrial Coating Pigments', 'Ink Formulations', 'Plastic Coloration'],
+    applications: ['Color Pigment', 'Ink Formulations', 'Plastic Coloration'],
     products: [
-      { name: 'Color Pigments', description: 'High-purity organic and inorganic pigments for color‑critical manufacturing.', specs: { 'Brand': 'Micas Organics' } }
+      { name: 'Color Pigment', description: 'High-purity organic and inorganic pigments for color‑critical manufacturing.', specs: { 'Brand': 'Micas Organics' } }
     ]
   },
   {
