@@ -135,7 +135,7 @@ export const principals = [
     color: '#059669',
     shortDescription: 'Rubber to Metal Bonding, Construction & Auto',
     description: 'Providing Rubber to Metal Bonding Adhesives, Construction Chemicals, and Automotive solutions.',
-    applications: ['Rubber Vulcanization Bonding', 'Construction Chemicals', 'Automotive Assembly'],
+    applications: ['Rubber to Metal Bonding Adhesive', 'Construction Chemicals', 'Automotive Assembly'],
     products: [
       { name: 'Rubber to Metal Bonding Adhesive', description: 'Specialty adhesives engineered for high-strength rubber-to-metal bonding.', specs: { 'Strength': 'High-strength', 'Cure Type': 'Heat' } },
       { name: 'Construction Additives', description: 'Advanced additives for building material enhancement.', specs: { 'Application': 'Construction' } }
