@@ -28,12 +28,6 @@ const CategorySection = ({ cat }) => {
       <div className="bg-white rounded-xl p-6 border border-neutral-100 mb-6">
         <p className="text-neutral-600 leading-relaxed mb-4">{cat.description}</p>
         <div>
-          <h4 className="text-sm font-semibold text-neutral-800 mb-2">Key Applications:</h4>
-          <div className="flex flex-wrap gap-2">
-            {cat.applications.map((app, i) => (
-              <span key={i} className="px-3 py-1 bg-neutral-50 text-neutral-600 text-xs rounded-full border border-neutral-200">{app}</span>
-            ))}
-          </div>
         </div>
       </div>
 
