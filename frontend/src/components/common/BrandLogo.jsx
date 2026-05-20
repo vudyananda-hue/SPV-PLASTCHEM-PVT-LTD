@@ -41,12 +41,20 @@ export default function BrandLogo({ slug, className = "h-8 w-auto" }) {
       )
     case 'evonik':
       return (
-        <svg viewBox="0 0 150 45" className={className}>
-          {/* Evonik Purple Logo */}
-          <circle cx="20" cy="22" r="14" fill="none" stroke="#7C3AED" strokeWidth="4" />
-          <circle cx="20" cy="22" r="6" fill="#7C3AED" />
-          <text x="44" y="28" fontFamily="Helvetica, Arial, sans-serif" fontSize="22" fontWeight="bold" fill="#7C3AED" letterSpacing="-0.5">EVONIK</text>
-          <text x="44" y="38" fontFamily="Helvetica, Arial, sans-serif" fontSize="7" fontWeight="bold" fill="#A78BFA" letterSpacing="1">POWER TO CREATE</text>
+        <svg viewBox="0 0 255 65" className={className}>
+          <g fill="#8C1974">
+            {/* Evonik Stylized 'e' Symbol */}
+            <path d="M 48 28 H 12 A 18 18 0 1 1 42 43.4" fill="none" stroke="#8C1974" strokeWidth="8" strokeLinecap="square" />
+            
+            {/* EVONIK Custom Typography */}
+            <path d="M 95 15 H 75 Q 70 15 70 20 V 40 Q 70 45 75 45 H 95 V 37 H 78 V 34 H 90 V 26 H 78 V 23 H 95 Z" />
+            <path d="M 98 15 H 107 L 115 35 L 123 15 H 132 L 120 45 H 110 Z" />
+            <path d="M 142 15 H 152 Q 160 15 160 20 V 40 Q 160 45 152 45 H 142 Q 134 45 134 40 V 20 Q 134 15 142 15 Z M 142 23 V 37 H 152 V 23 H 142 Z" />
+            <path d="M 168 15 H 176 L 189 36 V 15 H 197 V 45 H 189 L 176 24 V 45 H 168 Z" />
+            <path d="M 205 15 H 213 V 45 H 205 Z" />
+            <path d="M 218 15 H 226 V 26 L 238 15 H 248 L 234 29 L 249 45 H 238 L 226 32 V 45 H 218 Z" />
+          </g>
+          <text x="249" y="58" fontFamily="Helvetica, Arial, sans-serif" fontSize="10" fontWeight="900" fill="#8C1974" letterSpacing="1" textAnchor="end">POWER TO CREATE</text>
         </svg>
       )
     case 'seiko':
