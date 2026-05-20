@@ -71,26 +71,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Corporate Information */}
-      <section className="section-padding bg-white" ref={corporateRef}>
-        <div className="container-wide mx-auto">
-          <SectionTitle subtitle="Official Details" title="Corporate Information" />
-
-          <div className={`mt-8 bg-gradient-to-r from-primary-900 to-primary-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 card-hover scroll-animate scroll-fade-in-up animate-delay-200 ${isCorporateVisible ? 'is-visible' : ''}`}>
-             <div className="shrink-0 w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
-                <Target className="w-8 h-8 text-accent-400" />
-             </div>
-             <div>
-               <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: 'var(--font-heading)' }}>Corporate Memberships</h3>
-               <ul className="text-neutral-300 space-y-2 list-disc list-inside">
-                 {corporateInfo.memberships.map((membership, i) => (
-                   <li key={i}>{membership}</li>
-                 ))}
-               </ul>
-             </div>
-          </div>
-        </div>
-      </section>
 
       {/* Timeline */}
       <section className="section-padding bg-neutral-50" ref={timelineRef}>
