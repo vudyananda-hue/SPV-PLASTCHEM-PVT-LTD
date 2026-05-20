@@ -147,7 +147,7 @@ export const principals = [
     slug: 'idex',
     icon: Factory,
     color: '#D97706',
-    shortDescription: 'Dispensing and mixing machines for Paint Industry',
+    shortDescription: '',
     description: 'Supplying dispensing and mixing machines specifically designed for the Paint Industry.',
     applications: ['Paint Dispensing', 'Industrial Mixing', 'Retail Color Tinting'],
     products: [
