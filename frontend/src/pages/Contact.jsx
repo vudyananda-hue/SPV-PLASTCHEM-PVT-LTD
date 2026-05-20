@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Send, Clock } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { contactInfo } from '../data/content'
-import { api } from '../lib/api'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', subject: '', message: '' })
@@ -15,17 +14,29 @@ export default function Contact() {
     setLoading(true)
     setError(null)
     try {
-      await api.submitInquiry({
-        name: form.name,
-        email: form.email,
-        company: form.company || undefined,
-        phone: form.phone || undefined,
-        product_category: form.subject || undefined,
-        message: form.message
-      })
-      setSubmitted(true)
-      setTimeout(() => setSubmitted(false), 5000)
-      setForm({ name: '', email: '', company: '', phone: '', subject: '', message: '' })
+      const formData = new FormData();
+      formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY_HERE");
+      formData.append("name", form.name);
+      formData.append("email", form.email);
+      formData.append("company", form.company);
+      formData.append("phone", form.phone);
+      formData.append("subject", form.subject);
+      formData.append("message", form.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true)
+        setTimeout(() => setSubmitted(false), 5000)
+        setForm({ name: '', email: '', company: '', phone: '', subject: '', message: '' })
+      } else {
+        throw new Error(data.message || 'Failed to send message. Please try again.')
+      }
     } catch (err) {
       setError(err.message || 'Failed to send message. Please try again.')
     } finally {
@@ -148,7 +159,7 @@ export default function Contact() {
               <div className="rounded-xl overflow-hidden border border-neutral-100 h-[250px]">
                 <iframe
                   title="SPV Plastchem Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.63289049707!2d79.7861!3d6.9271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2s!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63388.94825946328!2d79.8893!3d6.7972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae245416b7eb89b%3A0x8e8334a1795c479e!2sPiliyandala%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

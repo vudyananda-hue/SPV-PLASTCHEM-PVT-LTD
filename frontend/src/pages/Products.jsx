@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { Search } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { productCategories } from '../data/content'
 import BrandLogo from '../components/common/BrandLogo'
@@ -62,6 +64,7 @@ const CategorySection = ({ cat }) => {
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams()
   const activeCategory = searchParams.get('category') || 'all'
+  const [searchQuery, setSearchQuery] = useState('')
 
   const handleCategoryChange = (slug) => {
     if (slug === 'all') {
@@ -72,6 +75,22 @@ export default function Products() {
   }
 
   const filteredCategories = activeCategory === 'all' ? productCategories : productCategories.filter((c) => c.slug === activeCategory)
+
+  const displayedCategories = filteredCategories.map(cat => {
+    if (!searchQuery) return cat;
+    
+    const lowerQuery = searchQuery.toLowerCase();
+    const matchingProducts = cat.products.filter(p => 
+      p.name.toLowerCase().includes(lowerQuery) || 
+      p.description.toLowerCase().includes(lowerQuery)
+    );
+    
+    if (cat.name.toLowerCase().includes(lowerQuery) || cat.description.toLowerCase().includes(lowerQuery)) {
+      return cat;
+    }
+    
+    return { ...cat, products: matchingProducts };
+  }).filter(cat => cat.products.length > 0);
 
 
   return (
@@ -87,24 +106,44 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Category Tabs */}
-      <section className="bg-white border-b border-neutral-100 sticky top-[72px] md:top-[80px] z-30">
-        <div className="container-wide mx-auto px-4 sm:px-6">
-          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide">
-            <button onClick={() => handleCategoryChange('all')} className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${activeCategory === 'all' ? 'bg-primary-900 text-white' : 'text-neutral-500 hover:bg-neutral-50'}`} id="tab-all">All Products</button>
-            {productCategories.filter(c => c.id !== 'angus').map((cat) => (
-              <button key={cat.slug} onClick={() => handleCategoryChange(cat.slug)} className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${activeCategory === cat.slug ? 'bg-primary-900 text-white' : 'text-neutral-500 hover:bg-neutral-50'}`} id={`tab-${cat.slug}`}>{cat.name}</button>
-            ))}
+      {/* Category Tabs & Search */}
+      <section className="bg-white border-b border-neutral-100 sticky top-[72px] md:top-[80px] z-30 shadow-sm">
+        <div className="container-wide mx-auto px-4 sm:px-6 py-3">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex gap-1 overflow-x-auto scrollbar-hide">
+              <button onClick={() => handleCategoryChange('all')} className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${activeCategory === 'all' ? 'bg-primary-900 text-white' : 'text-neutral-500 hover:bg-neutral-50'}`} id="tab-all">All Products</button>
+              {productCategories.filter(c => c.id !== 'angus').map((cat) => (
+                <button key={cat.slug} onClick={() => handleCategoryChange(cat.slug)} className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${activeCategory === cat.slug ? 'bg-primary-900 text-white' : 'text-neutral-500 hover:bg-neutral-50'}`} id={`tab-${cat.slug}`}>{cat.name}</button>
+              ))}
+            </div>
+            
+            <div className="relative w-full md:w-64 shrink-0">
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 bg-neutral-50 border border-neutral-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 transition-all"
+              />
+              <Search className="w-4 h-4 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Product Categories */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-neutral-50 min-h-[50vh]">
         <div className="container-wide mx-auto">
-          {filteredCategories.map((cat) => (
-            <CategorySection key={cat.id} cat={cat} />
-          ))}
+          {displayedCategories.length > 0 ? (
+            displayedCategories.map((cat) => (
+              <CategorySection key={cat.id} cat={cat} />
+            ))
+          ) : (
+            <div className="text-center py-20">
+              <p className="text-neutral-500 text-lg">No products found matching "{searchQuery}".</p>
+              <button onClick={() => setSearchQuery('')} className="mt-4 text-accent-600 font-medium hover:underline">Clear Search</button>
+            </div>
+          )}
         </div>
       </section>
 
