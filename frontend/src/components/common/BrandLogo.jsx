@@ -4,10 +4,11 @@ export default function BrandLogo({ slug, className = "h-8 w-auto" }) {
   switch (slug) {
     case 'dow-chemical':
       return (
-        <svg viewBox="0 0 120 70" className={className}>
+        <svg viewBox="0 0 160 80" className={className}>
           {/* Dow Red Diamond Logo */}
-          <polygon points="60,5 115,35 60,65 5,35" fill="#E11D48" />
-          <text x="60" y="44" fontFamily="Arial Black, Impact, sans-serif" fontSize="24" fontWeight="bold" fill="white" textAnchor="middle">DOW</text>
+          <polygon points="75,10 140,40 75,70 10,40" fill="#E50000" />
+          <text x="75" y="52" fontFamily="Georgia, 'Times New Roman', serif" fontSize="34" fontWeight="bold" fill="white" textAnchor="middle">DOW</text>
+          <text x="145" y="65" fontFamily="Arial, sans-serif" fontSize="12" fill="#E50000">®</text>
         </svg>
       )
     case 'angus-chemical':
