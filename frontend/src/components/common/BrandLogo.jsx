@@ -24,10 +24,11 @@ export default function BrandLogo({ slug, className = "h-8 w-auto" }) {
       )
     case 'dupont':
       return (
-        <svg viewBox="0 0 120 60" className={className}>
-          {/* DuPont Red Oval Logo */}
-          <ellipse cx="60" cy="30" rx="55" ry="25" fill="none" stroke="#DC2626" strokeWidth="6" />
-          <text x="60" y="38" fontFamily="Arial, Helvetica, sans-serif" fontSize="20" fontWeight="900" fill="#DC2626" textAnchor="middle" letterSpacing="-1">DUPONT</text>
+        <svg viewBox="0 0 180 60" className={className}>
+          {/* DuPont Modern Logo */}
+          <path d="M 28 18 Q 5 30 28 42 Q 22 30 28 18 Z" fill="#E50000" />
+          <text x="90" y="42" fontFamily="Impact, Arial Black, sans-serif" fontSize="36" fill="#E50000" textAnchor="middle" letterSpacing="1">DUPONT</text>
+          <path d="M 152 18 Q 175 30 152 42 Q 158 30 152 18 Z" fill="#E50000" />
         </svg>
       )
     case 'idex':
