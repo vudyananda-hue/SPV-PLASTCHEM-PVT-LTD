@@ -108,7 +108,7 @@ export const principals = [
     color: '#E11D48',
     shortDescription: 'Paint & Coating Industry, Polyurethane & Systems (Binders)',
     description: 'We act as an Indenting agent / Marketing office for DOW CHEMICAL INTERNATIONAL PVT LTD, specializing in raw materials for the Paint & Coating Industry, and Polyurethane & Systems (Binders).',
-    applications: ['Paint & Coating Formulation', 'Polyurethane Foams', 'Industrial Binders'],
+    applications: ['Paint & Coating Formulation', 'Polyurethane & Systems.', 'Industrial Binders'],
     products: [
       { name: 'Polyurethane', description: 'High-performance polyurethane for industrial systems.', specs: { 'Origin': 'Global', 'Quality': 'Premium' } },
       { name: 'Paint & Coating Materials', description: 'Raw materials for commercial and industrial paint formulations.', specs: { 'Type': 'Raw Materials' } }
@@ -241,7 +241,7 @@ export const principals = [
     color: '#8B5CF6',
     shortDescription: 'Polyol',
     description: 'Supplying Polyol from Manali Petro Chemicals.',
-    applications: ['Polyurethane Foams', 'Elastomers', 'Coatings & Adhesives'],
+    applications: ['Polyurethane & Systems.', 'Elastomers', 'Coatings & Adhesives'],
     products: [
       { name: 'Polyol', description: 'High-quality polyols for flexible and rigid foam production.', specs: { 'Brand': 'Manali' } }
     ]
