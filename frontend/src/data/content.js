@@ -187,7 +187,7 @@ export const principals = [
     slug: 'soujanya',
     icon: Palette,
     color: '#EC4899',
-    shortDescription: 'Pigment Colorants/ Pastes (PU, PAINT, RUBBER)',
+    shortDescription: '',
     description: 'Providing Pigment Colorants and Pastes for PU, Paint, and Rubber industries.',
     applications: ['Polyurethane Coloring', 'Paint Tinting', 'Rubber Compounding'],
     products: [
