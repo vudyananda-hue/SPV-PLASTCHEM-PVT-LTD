@@ -213,7 +213,7 @@ export const principals = [
     slug: 'malion',
     icon: Paintbrush,
     color: '#0EA5E9',
-    shortDescription: 'Pigment Master Batch (White, Black)',
+    shortDescription: '',
     description: 'Marketing Pigment Master Batch (White, Black) for various applications.',
     applications: ['Plastic Film Extrusion', 'Injection Moulding', 'Blow Moulding'],
     products: [
@@ -226,7 +226,7 @@ export const principals = [
     slug: 'micas',
     icon: Star,
     color: '#F59E0B',
-    shortDescription: 'Color Pigment',
+    shortDescription: '',
     description: 'Supplying Color Pigments from Micas Organics Limited.',
     applications: ['Color Pigment', 'Ink Formulations', 'Plastic Coloration'],
     products: [
