@@ -164,7 +164,7 @@ export default function Navbar() {
               {/* Mobile Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
-                className={`p-2 rounded-lg transition-colors ${
+                className={`lg:hidden p-2 rounded-lg transition-colors ${
                   showTransparent
                     ? 'text-white hover:bg-white/10'
                     : 'text-neutral-500 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-white/10'
