@@ -44,7 +44,7 @@ export default function BrandLogo({ slug, className = "h-8 w-auto" }) {
         <svg viewBox="0 0 255 65" className={className}>
           <g fill="#8C1974">
             {/* Evonik Stylized 'e' Symbol */}
-            <path d="M 48 28 H 12 A 18 18 0 1 1 42 43.4" fill="none" stroke="#8C1974" strokeWidth="8" strokeLinecap="square" />
+            <path d="M 38 28 H 12 A 18 18 0 1 1 42 43.4" fill="none" stroke="#8C1974" strokeWidth="8" strokeLinecap="butt" />
             
             {/* EVONIK Custom Typography */}
             <path d="M 95 15 H 75 Q 70 15 70 20 V 40 Q 70 45 75 45 H 95 V 37 H 78 V 34 H 90 V 26 H 78 V 23 H 95 Z" />
