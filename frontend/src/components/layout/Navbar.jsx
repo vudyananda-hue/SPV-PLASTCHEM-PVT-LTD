@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Menu, X, ChevronRight, FlaskConical } from 'lucide-react'
+import { Menu, X, ChevronRight, Sun, Moon } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 
 const navLinks = [
@@ -14,8 +14,26 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return document.documentElement.classList.contains('dark')
+    }
+    return false
+  })
   const { user } = useAuth()
   const location = useLocation()
+
+  const toggleDarkMode = () => {
+    const newDark = !isDark
+    setIsDark(newDark)
+    if (newDark) {
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark'
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.theme = 'light'
+    }
+  }
 
   /* Track scroll position */
   useEffect(() => {
@@ -45,7 +63,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           showTransparent
             ? 'bg-transparent'
-            : 'bg-white/95 backdrop-blur-md shadow-lg shadow-neutral-900/5'
+            : 'bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md shadow-lg shadow-neutral-900/5 dark:shadow-black/20'
         }`}
       >
         <div className="container-wide mx-auto px-4 sm:px-6">
@@ -60,7 +78,7 @@ export default function Navbar() {
               <div className="flex flex-col animate-slide-right">
                 <span 
                   className={`text-base md:text-lg font-bold leading-none tracking-tight transition-all duration-300 group-hover:text-accent-500 ${
-                    showTransparent ? 'text-white' : 'text-primary-900'
+                    showTransparent ? 'text-white' : 'text-primary-900 dark:text-white'
                   }`}
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
@@ -68,7 +86,7 @@ export default function Navbar() {
                 </span>
                 <span 
                   className={`text-[0.6rem] font-bold tracking-[0.2em] uppercase transition-all duration-300 ${
-                    showTransparent ? 'text-neutral-300' : 'text-neutral-500'
+                    showTransparent ? 'text-neutral-300' : 'text-neutral-500 dark:text-neutral-400'
                   }`}
                 >
                   (Pvt) Ltd
@@ -88,10 +106,10 @@ export default function Navbar() {
                       isActive
                         ? showTransparent
                           ? 'text-accent-400 bg-white/10'
-                          : 'text-accent-600 bg-accent-50'
+                          : 'text-accent-600 bg-accent-50 dark:text-accent-400 dark:bg-accent-500/10'
                         : showTransparent
                         ? 'text-neutral-200 hover:text-white hover:bg-white/10'
-                        : 'text-neutral-600 hover:text-primary-900 hover:bg-neutral-50'
+                        : 'text-neutral-600 dark:text-neutral-300 hover:text-primary-900 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-white/10'
                     }`
                   }
                   id={`nav-${link.path.replace('/', '') || 'home'}`}
@@ -126,21 +144,51 @@ export default function Navbar() {
                 Get a Quote
                 <ChevronRight className="w-4 h-4" />
               </Link>
+
+              {/* Dark Mode Toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className={`ml-2 p-2 rounded-lg transition-all duration-200 ${
+                  showTransparent
+                    ? 'text-neutral-200 hover:text-white hover:bg-white/10'
+                    : 'text-neutral-500 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-white/10'
+                }`}
+                aria-label="Toggle dark mode"
+                id="dark-mode-toggle"
+              >
+                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
             </div>
 
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
-                showTransparent
-                  ? 'text-white hover:bg-white/10'
-                  : 'text-neutral-700 hover:bg-neutral-100'
-              }`}
-              aria-label="Toggle navigation menu"
-              id="mobile-menu-toggle"
-            >
-              {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="flex items-center gap-2">
+              {/* Mobile Dark Mode Toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className={`p-2 rounded-lg transition-colors ${
+                  showTransparent
+                    ? 'text-white hover:bg-white/10'
+                    : 'text-neutral-500 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-white/10'
+                }`}
+                aria-label="Toggle dark mode"
+                id="mobile-dark-mode-toggle"
+              >
+                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                onClick={() => setIsMobileOpen(!isMobileOpen)}
+                className={`lg:hidden p-2 rounded-lg transition-colors ${
+                  showTransparent
+                    ? 'text-white hover:bg-white/10'
+                    : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-white/10'
+                }`}
+                aria-label="Toggle navigation menu"
+                id="mobile-menu-toggle"
+              >
+                {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -155,18 +203,18 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-[280px] bg-white shadow-2xl transform transition-transform duration-300 lg:hidden ${
+        className={`fixed top-0 right-0 z-50 h-full w-[280px] bg-white dark:bg-neutral-900 shadow-2xl transform transition-transform duration-300 lg:hidden ${
           isMobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         id="mobile-drawer"
       >
-        <div className="flex items-center justify-between p-5 border-b border-neutral-100">
-          <span className="font-bold text-primary-900" style={{ fontFamily: 'var(--font-heading)' }}>
+        <div className="flex items-center justify-between p-5 border-b border-neutral-100 dark:border-neutral-800">
+          <span className="font-bold text-primary-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>
             Menu
           </span>
           <button
             onClick={() => setIsMobileOpen(false)}
-            className="p-1.5 rounded-lg text-neutral-500 hover:bg-neutral-100"
+            className="p-1.5 rounded-lg text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             aria-label="Close menu"
           >
             <X className="w-5 h-5" />
@@ -209,7 +257,7 @@ export default function Navbar() {
           )}
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-neutral-100">
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-neutral-100 dark:border-neutral-800">
           <Link
             to="/contact"
             className="btn-primary w-full justify-center text-sm"

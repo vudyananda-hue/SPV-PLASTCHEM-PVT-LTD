@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 /* ===== DESIGN TOKENS ===== */
 @theme {
   /* Primary — Deep Navy Blue */
@@ -104,8 +106,7 @@
 @layer base {
   body {
     font-family: var(--font-body);
-    color: var(--color-neutral-700);
-    background-color: #ffffff;
+    @apply text-neutral-700 bg-white dark:text-neutral-300 dark:bg-primary-900;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -113,7 +114,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--color-neutral-900);
+    @apply text-neutral-900 dark:text-white;
     line-height: 1.2;
     font-weight: 700;
   }

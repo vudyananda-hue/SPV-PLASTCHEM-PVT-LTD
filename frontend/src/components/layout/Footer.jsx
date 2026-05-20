@@ -82,7 +82,7 @@ export default function Footer() {
                 <img 
                   src="/logo.jpg" 
                   alt="Logo" 
-                  className="h-12 w-auto object-contain rounded-lg border-2 border-white/10 shadow-lg" 
+                  className="h-12 w-auto object-contain rounded-lg border-2 border-white/10 dark:border-white/20 shadow-lg" 
                 />
                 <div className="flex flex-col">
                   <span 
@@ -91,12 +91,12 @@ export default function Footer() {
                   >
                     SPV Plastchem
                   </span>
-                  <span className="text-neutral-500 text-[0.6rem] font-bold tracking-[0.2em] uppercase">
+                  <span className="text-neutral-500 dark:text-neutral-400 text-[0.6rem] font-bold tracking-[0.2em] uppercase">
                     (Pvt) Ltd
                   </span>
                 </div>
               </Link>
-              <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+              <p className="text-sm text-neutral-400 dark:text-neutral-300 leading-relaxed mb-4">
                 A leading indenting Agent and Marketing Office in Sri Lanka supplying raw materials and machinery to the Plastics & Chemical industry.
               </p>
               <p className="text-xs font-semibold text-accent-400 uppercase tracking-widest mb-6">
@@ -109,7 +109,7 @@ export default function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-lg bg-primary-800 flex items-center justify-center text-neutral-400 hover:bg-accent-500 hover:text-white transition-all duration-200"
+                    className="w-9 h-9 rounded-lg bg-primary-800 flex items-center justify-center text-neutral-400 dark:text-neutral-300 hover:bg-accent-500 dark:hover:bg-accent-400 hover:text-white dark:hover:text-white transition-all duration-200"
                     aria-label={s.label}
                   >
                     <s.Icon />
@@ -154,7 +154,7 @@ export default function Footer() {
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className="text-sm text-neutral-400 hover:text-accent-400 transition-colors inline-flex items-center gap-1.5 group"
+                      className="text-sm text-neutral-400 dark:text-neutral-300 hover:text-accent-400 dark:hover:text-accent-300 transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                       {link.label}
@@ -177,7 +177,7 @@ export default function Footer() {
                   <Phone className="w-4 h-4 text-accent-500 mt-0.5 shrink-0" />
                   <a
                     href={`tel:${company.phone.replace(/\s/g, '')}`}
-                    className="text-sm text-neutral-400 hover:text-accent-400 transition-colors"
+                    className="text-sm text-neutral-400 dark:text-neutral-300 hover:text-accent-400 dark:hover:text-accent-300 transition-colors"
                   >
                     {company.phone}
                   </a>
@@ -193,7 +193,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-accent-500 mt-0.5 shrink-0" />
-                  <span className="text-sm text-neutral-400">{company.fullAddress}</span>
+                  <span className="text-sm text-neutral-400 dark:text-neutral-300">{company.fullAddress}</span>
                 </li>
               </ul>
             </div>
@@ -204,12 +204,12 @@ export default function Footer() {
         <div className="border-t border-primary-800">
           <div className="container-wide mx-auto px-4 sm:px-6 py-5">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-              <p className="text-xs text-neutral-500">
+              <p className="text-xs text-neutral-500 dark:text-neutral-400">
                 &copy; {currentYear} {company.name}. All rights reserved.
               </p>
               <div className="flex gap-5">
-                <span className="text-xs text-neutral-500">Privacy Policy</span>
-                <span className="text-xs text-neutral-500">Terms of Use</span>
+                <span className="text-xs text-neutral-500 dark:text-neutral-400">Privacy Policy</span>
+                <span className="text-xs text-neutral-500 dark:text-neutral-400">Terms of Use</span>
               </div>
             </div>
           </div>
