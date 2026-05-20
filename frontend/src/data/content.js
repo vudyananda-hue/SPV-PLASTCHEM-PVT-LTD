@@ -173,7 +173,7 @@ export const principals = [
     slug: 'seiko',
     icon: Briefcase,
     color: '#475569',
-    shortDescription: 'Smart label printers / Labels',
+    shortDescription: '',
     description: 'Supplying Smart label printers and Labels from SEIKO USA.',
     applications: ['Industrial Labeling', 'Barcode Printing', 'Smart Inventory Control'],
     products: [
