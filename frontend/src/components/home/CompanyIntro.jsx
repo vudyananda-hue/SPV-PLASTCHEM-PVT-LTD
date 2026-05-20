@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
+import { useCountUp } from '../../hooks/useCountUp'
 import { company } from '../../data/content'
 
 const highlights = [
@@ -10,12 +12,16 @@ const highlights = [
 ]
 
 export default function CompanyIntro() {
+  const [ref, isVisible] = useIntersectionObserver()
+  const [expRef, expCount] = useCountUp('25+', 2000)
+  const [prRef, prCount] = useCountUp('11', 2000)
+
   return (
-    <section id="company-intro" className="section-padding bg-white industrial-texture">
+    <section id="company-intro" className="section-padding bg-white industrial-texture" ref={ref}>
       <div className="container-wide mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Content */}
-          <div>
+          <div className={`scroll-animate scroll-slide-right ${isVisible ? 'is-visible' : ''}`}>
             <span className="inline-block text-sm font-semibold tracking-widest uppercase text-accent-500 mb-3">
               About Our Company
             </span>
@@ -53,8 +59,8 @@ export default function CompanyIntro() {
           </div>
 
           {/* Right — Visual Card */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary-800 to-primary-900 p-8 md:p-10 min-h-[400px] flex flex-col justify-end">
+          <div className={`relative scroll-animate scroll-fade-in-up animate-delay-200 ${isVisible ? 'is-visible' : ''}`}>
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary-800 to-primary-900 p-8 md:p-10 min-h-[400px] flex flex-col justify-end card-hover">
               {/* Decorative background pattern */}
               <div
                 className="absolute inset-0 opacity-5"
@@ -71,16 +77,16 @@ export default function CompanyIntro() {
               />
 
               {/* Floating stat cards */}
-              <div className="absolute top-6 right-6 glass rounded-xl p-4 text-center">
+              <div className="absolute top-6 right-6 glass rounded-xl p-4 text-center" ref={expRef}>
                 <div className="text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}>
-                  25+
+                  {expCount}
                 </div>
                 <div className="text-xs text-neutral-300 uppercase tracking-wider">Years Exp</div>
               </div>
 
-              <div className="absolute top-1/3 left-6 glass rounded-xl p-4 text-center">
+              <div className="absolute top-1/3 left-6 glass rounded-xl p-4 text-center" ref={prRef}>
                 <div className="text-2xl font-bold text-accent-400" style={{ fontFamily: 'var(--font-heading)' }}>
-                  11
+                  {prCount}
                 </div>
                 <div className="text-xs text-neutral-300 uppercase tracking-wider">Principals</div>
               </div>

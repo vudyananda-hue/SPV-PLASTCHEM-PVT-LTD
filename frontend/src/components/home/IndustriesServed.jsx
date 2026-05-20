@@ -2,8 +2,11 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import SectionTitle from '../common/SectionTitle'
 import { industries } from '../../data/content'
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 
 export default function IndustriesServed() {
+  const [ref, isVisible] = useIntersectionObserver()
+
   return (
     <section
       id="industries-served"
@@ -11,6 +14,7 @@ export default function IndustriesServed() {
       style={{
         background: 'linear-gradient(135deg, #0A1628 0%, #111D38 50%, #0D162E 100%)',
       }}
+      ref={ref}
     >
       {/* Background pattern */}
       <div
@@ -35,7 +39,7 @@ export default function IndustriesServed() {
             return (
               <div
                 key={industry.id}
-                className="group glass rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+                className={`group glass rounded-xl p-6 hover:bg-white/10 transition-all duration-300 scroll-animate scroll-fade-in-up ${isVisible ? 'is-visible' : ''}`}
                 id={`industry-card-${industry.id}`}
               >
                 <div className="w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center mb-5 group-hover:bg-accent-500/30 transition-colors">

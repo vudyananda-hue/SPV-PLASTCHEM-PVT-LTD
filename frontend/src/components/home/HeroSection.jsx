@@ -2,6 +2,28 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, FlaskConical, Beaker, Shield } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { stats } from '../../data/content'
+import { useCountUp } from '../../hooks/useCountUp'
+
+const StatCounter = ({ stat }) => {
+  const [ref, count] = useCountUp(stat.value, 2000);
+  
+  return (
+    <div
+      className="text-center sm:text-left border-l-2 border-accent-500/30 pl-4"
+      ref={ref}
+    >
+      <div
+        className="text-2xl md:text-3xl font-bold text-white mb-1"
+        style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}
+      >
+        {count}
+      </div>
+      <div className="text-xs text-neutral-400 uppercase tracking-wider font-medium">
+        {stat.label}
+      </div>
+    </div>
+  );
+};
 
 export default function HeroSection() {
   return (
@@ -151,20 +173,7 @@ export default function HeroSection() {
             style={{ animationDelay: '0.45s' }}
           >
             {stats.map((stat, i) => (
-              <div
-                key={i}
-                className="text-center sm:text-left border-l-2 border-accent-500/30 pl-4"
-              >
-                <div
-                  className="text-2xl md:text-3xl font-bold text-white mb-1"
-                  style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}
-                >
-                  {stat.value}
-                </div>
-                <div className="text-xs text-neutral-400 uppercase tracking-wider font-medium">
-                  {stat.label}
-                </div>
-              </div>
+              <StatCounter key={i} stat={stat} />
             ))}
           </div>
         </div>

@@ -140,8 +140,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-neutral-900 text-sm mb-1">Business Hours</h4>
-                  <p className="text-sm text-neutral-500">Mon – Fri: 8:30 AM – 5:30 PM</p>
-                  <p className="text-sm text-neutral-500">Sat: 8:30 AM – 1:00 PM</p>
+                  <p className="text-sm text-neutral-500">Mon – Fri: 8:00 AM – 5:30 PM</p>
                 </div>
               </div>
 

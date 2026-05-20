@@ -5,6 +5,7 @@ import BrandLogo from '../common/BrandLogo'
 import { principals } from '../../data/content'
 
 export default function ProductHighlights() {
+  const displayedPrincipals = principals.filter(p => p.id !== 'angus');
   return (
     <section id="product-highlights" className="section-padding bg-neutral-50">
       <div className="container-wide mx-auto">
@@ -15,7 +16,7 @@ export default function ProductHighlights() {
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {principals.slice(0, 6).map((principal) => {
+          {displayedPrincipals.slice(0, 6).map((principal) => {
             return (
               <Link
                 key={principal.id}
@@ -47,7 +48,7 @@ export default function ProductHighlights() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {principals.slice(6).map((principal) => {
+          {displayedPrincipals.slice(6).map((principal) => {
             return (
               <Link
                 key={principal.id}

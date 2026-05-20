@@ -42,7 +42,7 @@ export const company = {
   mobile: '(+94) 777 805655',
   email: 'vudya@spvplastchem.lk',
   address: 'Piliyandala, Sri Lanka',
-  fullAddress: 'No. 80 A, Jayasena Udawatta Place, New Hadigama Road, Piliyandala 10300, Sri Lanka',
+  fullAddress: 'Piliyandala, Sri Lanka',
   website: 'spv-plastchem-eh7g.vercel.app',
 }
 
@@ -71,7 +71,7 @@ export const contactInfo = [
   {
     icon: MapPin,
     label: 'Address',
-    value: 'No. 80 A, Jayasena Udawatta Place, New Hadigama Road, Piliyandala 10300, Sri Lanka',
+    value: 'Piliyandala, Sri Lanka',
     href: null,
   },
 ]
@@ -110,7 +110,7 @@ export const principals = [
     description: 'We act as an Indenting agent / Marketing office for DOW CHEMICAL INTERNATIONAL PVT LTD, specializing in raw materials for the Paint & Coating Industry, and Polyurethane & Systems (Binders).',
     applications: ['Paint & Coating Formulation', 'Polyurethane Foams', 'Industrial Binders'],
     products: [
-      { name: 'Polyurethane Binders', description: 'High-performance polyurethane binders for industrial systems.', specs: { 'Origin': 'Global', 'Quality': 'Premium' } },
+      { name: 'Polyurethane', description: 'High-performance polyurethane for industrial systems.', specs: { 'Origin': 'Global', 'Quality': 'Premium' } },
       { name: 'Paint & Coating Materials', description: 'Raw materials for commercial and industrial paint formulations.', specs: { 'Type': 'Raw Materials' } }
     ]
   },
@@ -363,3 +363,33 @@ export const corporateValues = [
     description: 'Promoting products that drive forward the capabilities of local manufacturing sectors.',
   },
 ]
+
+/* ================================================================
+   TESTIMONIALS
+   ================================================================ */
+export const testimonials = [
+  {
+    id: 1,
+    name: 'Ruwan Perera',
+    company: 'Alpha Paints Lanka',
+    role: 'Production Manager',
+    content: 'SPV Plastchem has been our most reliable supplier for paint dispersants and additives. Their technical knowledge is unmatched in the industry.',
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: 'Sunil Weerasinghe',
+    company: 'Ceylon Rubber Works',
+    role: 'Managing Director',
+    content: 'The quality of the reclaimed rubber and bonding adhesives provided by SPV has significantly improved our manufacturing efficiency.',
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: 'Amal Fernando',
+    company: 'Lanka Polyurethane',
+    role: 'Operations Head',
+    content: 'Dr. Vudyananda and his team always ensure we get the best PU additives exactly when we need them. A truly professional indenting agent.',
+    rating: 5,
+  }
+];
