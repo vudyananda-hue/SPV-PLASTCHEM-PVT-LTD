@@ -160,7 +160,7 @@ export const principals = [
     slug: 'evonik',
     icon: Target,
     color: '#7C3AED',
-    shortDescription: 'Polyurethane Additives',
+    shortDescription: '',
     description: 'Marketing office for Polyurethane Additives from Evonik.',
     applications: ['Polyurethane Foam Catalysis', 'Cell Stabilization', 'Surfactant Enhancement'],
     products: [
