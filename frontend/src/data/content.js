@@ -133,7 +133,7 @@ export const principals = [
     slug: 'dupont',
     icon: Link2,
     color: '#059669',
-    shortDescription: 'Rubber to Metal Bonding, Construction & Auto',
+    shortDescription: '',
     description: 'Providing Rubber to Metal Bonding Adhesives, Construction Chemicals, and Automotive solutions.',
     applications: ['Rubber to Metal Bonding Adhesive', 'Construction Chemicals', 'Automotive Assembly'],
     products: [
