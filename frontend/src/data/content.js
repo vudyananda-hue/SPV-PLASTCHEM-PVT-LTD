@@ -203,7 +203,7 @@ export const principals = [
     description: 'Supplying Reclaimed Rubber from Yong Fong Rubber Industries.',
     applications: [],
     products: [
-      { name: 'Reclaimed Rubber', description: 'Sustainable, high-quality devulcanized reclaimed rubber to optimize manufacturing costs.', specs: { 'Origin': 'Malaysia', 'Grade': 'Premium' } }
+      { name: 'Reclaimed Rubber', description: 'Sustainable, high-quality devulcanized reclaimed rubber to optimize manufacturing costs.', specs: { 'Origin': 'Malaysia' } }
     ]
   },
   {
