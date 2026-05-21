@@ -37,7 +37,7 @@ export const company = {
   chairman: 'Dr. Vudyananda Sellahewa, FPRI',
   chairmanTitle: 'Chairman / Managing Director',
   chairmanBio:
-    'Dr. Vudyananda Sellahewa has experience working with Dow chemical products and other multinational companies since 1997 in Sri Lanka. He is a Fellow Member and served The Plastics and Rubber Institute of Sri Lanka as an Executive Committee member until 2019/2020. With over Twenty-Five years of experience in the Plastics, Chemical, Rubber & Automotive industry, he continuously works on developing and promoting products needed for the industry and focuses on the constant expansion of the organization with more principals.',
+    'Dr. Vudyananda Sellahewa has experience working with Dow chemical products and other multinational companies since 1997 in Sri Lanka. He is a Fellow Member and served The Plastics and Rubber Institute of Sri Lanka as an Executive Committee member until 2019/2020, and is a Life Member of the Sri Lanka Institute of Packaging. With over Twenty-Five years of experience in the Plastics, Chemical, Rubber & Automotive industry, he continuously works on developing and promoting products needed for the industry and focuses on the constant expansion of the organization with more principals.',
   phone: '(+94) 11 7592828',
   mobile: '(+94) 777 805655',
   email: 'vudya@spvplastchem.lk',
