@@ -80,7 +80,7 @@ export default function Footer() {
             <div className="sm:col-span-2 lg:col-span-1">
               <Link to="/" className="flex items-center gap-3 mb-6 group">
                 <img 
-                  src="/logo.jpg" 
+                  src="/logo.png" 
                   alt="Logo" 
                   className="h-12 w-auto object-contain rounded-lg border-2 border-white/10 dark:border-white/20 shadow-lg" 
                 />

@@ -72,7 +72,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group" id="logo-link">
               <img 
-                src="/logo.jpg" 
+                src="/logo.png" 
                 alt="Logo" 
                 className="h-10 md:h-11 w-auto object-contain rounded-lg border-2 border-white/20 shadow-sm group-hover:border-accent-500/50 transition-all duration-300" 
               />
