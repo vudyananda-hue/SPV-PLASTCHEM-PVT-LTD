@@ -177,7 +177,7 @@ export const principals = [
     applications: [],
     products: [
       { name: 'Smart Label Printers', description: 'High-precision smart hardware for commercial and logistics label printing.', specs: { 'Brand': 'SEIKO', 'Connectivity': 'Smart / USB / Network' } },
-      { name: 'High-Durability Labels', description: 'Labels resistant to chemicals, moisture, and extreme temperatures.', specs: { 'Type': 'Premium Labels' } }
+      { name: 'High-Durability Labels', description: 'Labels resistant to chemicals, moisture, and extreme temperatures.', specs: { 'Origin': 'Japan' } }
     ]
   },
   {
