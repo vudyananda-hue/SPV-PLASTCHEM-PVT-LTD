@@ -286,7 +286,7 @@ export const industries = [
     name: 'Polyurethane / Automotive',
     icon: Wrench,
     description: 'Supplying PU additives, binders, and polyol for the Polyurethane Industry and Automotive Industry.',
-    solutions: ['Polyurethane Additives', 'Polyol', 'PU Systems (Binders)'],
+    solutions: ['Polyurethane Additives', 'Polyol', 'PU Systems (Binders)', 'Colourants'],
   },
 ]
 
