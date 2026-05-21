@@ -229,7 +229,7 @@ export const principals = [
     description: 'Supplying Color Pigments from Micas Organics Limited.',
     applications: [],
     products: [
-      { name: 'Color Pigment', description: 'High-purity organic and inorganic pigments for color‑critical manufacturing.', specs: { 'Brand': 'Micas Organics' } }
+      { name: 'Color Pigment', description: 'High-purity organic and inorganic pigments for color‑critical manufacturing.', specs: { 'Origin': 'India' } }
     ]
   },
   {
