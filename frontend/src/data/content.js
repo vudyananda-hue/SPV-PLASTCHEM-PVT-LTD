@@ -150,7 +150,7 @@ export const principals = [
     description: 'Supplying dispensing and mixing machines specifically designed for the Paint Industry.',
     applications: [],
     products: [
-      { name: 'Dispensing & Mixing Machines', description: 'Precision mixing and dispensing machinery for paint and coating manufacturers.', specs: { 'Origin': 'USA', 'Support': 'Local Technical' } }
+      { name: 'Dispensing & Mixing Machines', description: 'Precision mixing and dispensing machinery for paint and coating manufacturers.', specs: { 'Origin': 'USA' } }
     ]
   },
   {
