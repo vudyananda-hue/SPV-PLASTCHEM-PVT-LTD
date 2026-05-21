@@ -190,7 +190,7 @@ export const principals = [
     description: 'Providing Pigment Colorants and Pastes for PU, Paint, and Rubber industries.',
     applications: [],
     products: [
-      { name: 'Pigment Colorants & Pastes', description: 'Vibrant, high-stability pigment pastes for coloring PU systems, paints, and rubber compounds.', specs: { 'Origin': 'Soujanya India' } }
+      { name: 'Pigment Colorants & Pastes', description: 'Vibrant, high-stability pigment pastes for coloring PU systems, paints, and rubber compounds.', specs: { 'Origin': 'India' } }
     ]
   },
   {
