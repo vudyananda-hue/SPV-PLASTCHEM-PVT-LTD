@@ -258,7 +258,7 @@ export const industries = [
     name: 'Paint and Coating',
     icon: Palette,
     description: 'Supplying raw materials, additives, and dispensing machinery for Paint and Coating manufacturers of Sri Lanka.',
-    solutions: ['Pigment Colorants', 'AMP Dispersants', 'Dispensing Machines', 'Binders'],
+    solutions: ['Pigment Colorants', 'AMP Dispersants', 'Dispensing Machines', 'Binders Thickness'],
   },
   {
     id: 'rubber',
