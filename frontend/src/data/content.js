@@ -242,7 +242,7 @@ export const principals = [
     description: 'Supplying Polyol from Manali Petro Chemicals.',
     applications: [],
     products: [
-      { name: 'Polyol', description: 'High-quality polyols for flexible and rigid foam production.', specs: { 'Brand': 'Manali' } }
+      { name: 'Polyol', description: 'High-quality polyols for flexible and rigid foam production.', specs: { 'Origin': 'India' } }
     ]
   }
 ]
