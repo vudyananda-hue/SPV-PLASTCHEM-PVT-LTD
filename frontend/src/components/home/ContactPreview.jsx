@@ -86,10 +86,10 @@ export default function ContactPreview() {
                   </div>
                 )}
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <input type="text" placeholder="Your Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" />
-                  <input type="email" placeholder="Email Address" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" />
+                  <input type="text" placeholder="Your Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white text-neutral-900 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" />
+                  <input type="email" placeholder="Email Address" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white text-neutral-900 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" />
                 </div>
-                <textarea placeholder="How can we help you?" required rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all resize-none" />
+                <textarea placeholder="How can we help you?" required rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white text-neutral-900 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all resize-none" />
                 <button type="submit" disabled={loading} className="btn-primary disabled:opacity-50">
                   {loading ? 'Sending...' : <>Send Inquiry <Send className="w-4 h-4" /></>}
                 </button>

@@ -76,38 +76,38 @@ export default function Contact() {
                   )}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-neutral-700 mb-1.5">Full Name *</label>
-                      <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" placeholder="Your full name" />
+                      <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5">Full Name *</label>
+                      <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" placeholder="Your full name" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-neutral-700 mb-1.5">Email Address *</label>
-                      <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" placeholder="you@company.com" />
+                      <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5">Email Address *</label>
+                      <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" placeholder="you@company.com" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-neutral-700 mb-1.5">Company</label>
-                      <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" placeholder="Company name" />
+                      <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5">Company</label>
+                      <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" placeholder="Company name" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-neutral-700 mb-1.5">Phone</label>
-                      <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" placeholder="+94 XX XXX XXXX" />
+                      <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5">Phone</label>
+                      <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" placeholder="+94 XX XXX XXXX" />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1.5">Subject *</label>
-                    <select required value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all bg-white">
-                      <option value="">Select a subject</option>
-                      <option value="product-inquiry">Product Inquiry</option>
-                      <option value="technical-support">Technical Support</option>
-                      <option value="partnership">Partnership Opportunity</option>
-                      <option value="quote">Request a Quote</option>
-                      <option value="other">Other</option>
+                    <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5">Subject *</label>
+                    <select required value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all">
+                      <option value="" className="text-neutral-900 dark:text-white">Select a subject</option>
+                      <option value="product-inquiry" className="text-neutral-900 dark:text-white">Product Inquiry</option>
+                      <option value="technical-support" className="text-neutral-900 dark:text-white">Technical Support</option>
+                      <option value="partnership" className="text-neutral-900 dark:text-white">Partnership Opportunity</option>
+                      <option value="quote" className="text-neutral-900 dark:text-white">Request a Quote</option>
+                      <option value="other" className="text-neutral-900 dark:text-white">Other</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1.5">Message *</label>
-                    <textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all resize-none" placeholder="Tell us how we can help..." />
+                    <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5">Message *</label>
+                    <textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-4 py-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all resize-none" placeholder="Tell us how we can help..." />
                   </div>
                   <button type="submit" disabled={loading} className="btn-primary !py-3 !px-8 disabled:opacity-50">
                     {loading ? 'Sending...' : <>Send Message <Send className="w-4 h-4" /></>}

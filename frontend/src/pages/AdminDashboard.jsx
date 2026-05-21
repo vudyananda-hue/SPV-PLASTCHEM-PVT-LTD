@@ -160,7 +160,7 @@ export default function AdminDashboard() {
                   <div className="p-4 border-b border-neutral-100 flex gap-3">
                     <div className="flex-1 relative">
                       <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
-                      <input type="text" placeholder="Search products..." className="w-full pl-9 pr-4 py-2 rounded-lg border border-neutral-200 text-sm outline-none focus:border-accent-500" />
+                      <input type="text" placeholder="Search products..." className="w-full pl-9 pr-4 py-2 rounded-lg border border-neutral-200 text-neutral-900 bg-white text-sm outline-none focus:border-accent-500" />
                     </div>
                   </div>
                   <div className="overflow-x-auto">
