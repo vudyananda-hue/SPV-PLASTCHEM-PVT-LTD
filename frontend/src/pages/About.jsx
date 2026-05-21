@@ -41,6 +41,20 @@ export default function About() {
                   </div>
                 ))}
               </div>
+              
+              <div className="mt-8 p-5 rounded-xl bg-gradient-to-br from-neutral-50 to-neutral-100 border-l-4 border-accent-500 shadow-sm relative overflow-hidden">
+                <div className="absolute -right-4 -top-4 opacity-5">
+                  <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p className="text-neutral-700 font-medium italic text-lg leading-relaxed relative z-10">
+                  "We grow our customers, and our customers grow us."
+                </p>
+                <p className="text-neutral-700 font-medium italic text-lg leading-relaxed mt-2 relative z-10">
+                  "Big or small, every customer matters to us."
+                </p>
+              </div>
             </div>
             <div className={`relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary-800 to-primary-900 p-8 min-h-[350px] flex items-end card-hover scroll-animate scroll-slide-up animate-delay-200 ${isOverviewVisible ? 'is-visible' : ''}`}>
               <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
