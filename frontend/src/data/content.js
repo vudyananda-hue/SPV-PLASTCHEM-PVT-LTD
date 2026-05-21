@@ -216,7 +216,7 @@ export const principals = [
     description: 'Marketing Pigment Master Batch (White, Black) for various applications.',
     applications: [],
     products: [
-      { name: 'Pigment Master Batch (White & Black)', description: 'Premium grade black and white color masterbatches for the plastics industry.', specs: { 'Origin': 'Malion China' } }
+      { name: 'Pigment Master Batch (White & Black)', description: 'Premium grade black and white color masterbatches for the plastics industry.', specs: { 'Origin': 'China' } }
     ]
   },
   {
