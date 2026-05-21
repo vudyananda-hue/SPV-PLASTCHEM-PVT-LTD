@@ -123,7 +123,7 @@ export const principals = [
     description: 'Supplying Amino – AMP Dispersant, a multifunctional specialty additive containing 2-amino-2-methyl-1-Propanol AMP 95.',
     applications: [],
     products: [
-      { name: 'AMP-95 Additive', description: 'Amino-AMP Dispersant acting as a multifunctional specialty additive containing 2-amino-2-methyl-1-Propanol.', specs: { 'Concentration': 'AMP 95', 'Grade': 'Industrial' } }
+      { name: 'AMP-95 Additive', description: 'Amino-AMP Dispersant acting as a multifunctional specialty additive containing 2-amino-2-methyl-1-Propanol.', specs: { 'Origin': 'USA' } }
     ]
   },
   {
