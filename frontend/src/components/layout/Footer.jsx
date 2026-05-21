@@ -89,10 +89,10 @@ export default function Footer() {
                     className="text-white font-bold text-lg leading-none tracking-tight group-hover:text-accent-400 transition-colors"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
-                    SPV Plastchem
+                    S P V PLASTCHEM
                   </span>
                   <span className="text-neutral-500 dark:text-neutral-400 text-[0.6rem] font-bold tracking-[0.2em] uppercase">
-                    (Pvt) Ltd
+                    (PRIVATE) LIMITED
                   </span>
                 </div>
               </Link>

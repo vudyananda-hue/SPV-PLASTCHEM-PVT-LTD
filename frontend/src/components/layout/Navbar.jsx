@@ -82,14 +82,14 @@ export default function Navbar() {
                   }`}
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
-                  SPV Plastchem
+                  S P V PLASTCHEM
                 </span>
                 <span 
                   className={`text-[0.6rem] font-bold tracking-[0.2em] uppercase transition-all duration-300 ${
                     showTransparent ? 'text-neutral-300' : 'text-neutral-500 dark:text-neutral-400'
                   }`}
                 >
-                  (Pvt) Ltd
+                  (PRIVATE) LIMITED
                 </span>
               </div>
             </Link>
