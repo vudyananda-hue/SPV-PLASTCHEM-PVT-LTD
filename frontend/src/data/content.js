@@ -163,7 +163,7 @@ export const principals = [
     description: 'Marketing office for Polyurethane Additives from Evonik.',
     applications: [],
     products: [
-      { name: 'Polyurethane Additives', description: 'Specialty catalysts and surfactants to optimize PU system manufacturing.', specs: { 'Origin': 'Evonik France' } }
+      { name: 'Polyurethane Additives', description: 'Specialty catalysts and surfactants to optimize PU system manufacturing.', specs: { 'Origin': 'Germany' } }
     ]
   },
   {
