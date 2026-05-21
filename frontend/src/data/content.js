@@ -176,7 +176,7 @@ export const principals = [
     description: 'Supplying Smart label printers and Labels from SEIKO USA.',
     applications: [],
     products: [
-      { name: 'Smart Label Printers', description: 'High-precision smart hardware for commercial and logistics label printing.', specs: { 'Brand': 'SEIKO', 'Connectivity': 'Smart / USB / Network' } },
+      { name: 'Smart Label Printers', description: 'High-precision smart hardware for commercial and logistics label printing.', specs: { 'Origin': 'Japan', 'Connectivity': 'Smart / USB / Network' } },
       { name: 'High-Durability Labels', description: 'Labels resistant to chemicals, moisture, and extreme temperatures.', specs: { 'Origin': 'Japan' } }
     ]
   },
