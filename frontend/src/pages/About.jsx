@@ -13,7 +13,7 @@ export default function About() {
 
   return (
     <>
-      <SEOHead title="About Us" description="Learn about S P V Plastchem — our history, vision, leadership, and commitment to industrial chemical excellence." path="/about" />
+      <SEOHead title="About Us" description="Learn about S P V PLASTCHEM — our history, vision, leadership, and commitment to industrial chemical excellence." path="/about" />
 
       {/* Page Header */}
       <section className="pt-28 pb-16 md:pt-32 md:pb-20" style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1B2D4A 100%)' }}>

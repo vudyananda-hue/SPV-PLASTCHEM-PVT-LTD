@@ -27,11 +27,12 @@ import {
    COMPANY INFO
    ================================================================ */
 export const company = {
-  name: 'S P V Plastchem (Pvt) Ltd',
-  shortName: 'SPV Plastchem',
+  name: 'S P V PLASTCHEM (PRIVATE) LIMITED',
+  shortName: 'S P V PLASTCHEM',
+  logo: '/logo.png',
   tagline: 'Leading Indenting Agent for Plastics & Chemical Industry',
   description:
-    'S P V PLASTCHEM (PVT) LTD is a leading indenting Agent within the geographical territory of Sri Lanka in Supplying raw materials and machinery to the Plastics & Chemical industry. With our expertise and recognition in the industry, we act as an Indenting agent / Marketing office in Sri Lanka for global companies.',
+    'S P V PLASTCHEM (PRIVATE) LIMITED is a leading indenting Agent within the geographical territory of Sri Lanka in Supplying raw materials and machinery to the Plastics & Chemical industry. With our expertise and recognition in the industry, we act as an Indenting agent / Marketing office in Sri Lanka for global companies.',
   founded: '2020',
   commenced: '01st January 2021',
   chairman: 'Dr. Vudyananda Sellahewa, FPRI',
@@ -328,7 +329,7 @@ export const companyHistory = [
   {
     year: '2020',
     title: 'Company Established',
-    description: 'S P V Plastchem (Pvt) Ltd was established on November 30th, 2020.',
+    description: 'S P V PLASTCHEM (PRIVATE) LIMITED was established on November 30th, 2020.',
   },
   {
     year: '2021',
@@ -372,7 +373,7 @@ export const testimonials = [
     name: '',
     company: '',
     role: '',
-    content: 'SPV Plastchem has been our most reliable supplier for paint dispersants and additives. Their technical knowledge is unmatched in the industry.',
+    content: 'S P V PLASTCHEM has been our most reliable supplier for paint dispersants and additives. Their technical knowledge is unmatched in the industry.',
     rating: 5,
   },
   {
