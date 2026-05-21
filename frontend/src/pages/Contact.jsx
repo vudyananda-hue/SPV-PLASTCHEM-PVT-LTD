@@ -2,47 +2,40 @@ import { useState } from 'react'
 import { Send, Clock } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { contactInfo } from '../data/content'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+import { api } from '../lib/api'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', subject: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [ref, isVisible] = useIntersectionObserver()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
     setError(null)
     try {
-      const formData = new FormData();
-      formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY_HERE");
-      formData.append("name", form.name);
-      formData.append("email", form.email);
-      formData.append("company", form.company);
-      formData.append("phone", form.phone);
-      formData.append("subject", form.subject);
-      formData.append("message", form.message);
+      await api.submitInquiry({
+        name: form.name,
+        email: form.email,
+        company: form.company || null,
+        phone: form.phone || null,
+        product_category: form.subject || null,
+        message: form.message
+      })
 
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setSubmitted(true)
-        setTimeout(() => setSubmitted(false), 5000)
-        setForm({ name: '', email: '', company: '', phone: '', subject: '', message: '' })
-      } else {
-        throw new Error(data.message || 'Failed to send message. Please try again.')
-      }
+      setSubmitted(true)
+      setTimeout(() => setSubmitted(false), 5000)
+      setForm({ name: '', email: '', company: '', phone: '', subject: '', message: '' })
     } catch (err) {
       setError(err.message || 'Failed to send message. Please try again.')
     } finally {
       setLoading(false)
     }
   }
+
 
   return (
     <>
@@ -58,11 +51,11 @@ export default function Contact() {
       </section>
 
       {/* Contact Content */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white" ref={ref}>
         <div className="container-wide mx-auto">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Contact Form — 3 cols */}
-            <div className="lg:col-span-3">
+            <div className={`lg:col-span-3 scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}>
               <h2 className="text-2xl font-bold text-neutral-900 mb-2" style={{ fontFamily: 'var(--font-heading)' }}>Send Us a Message</h2>
               <p className="text-neutral-500 mb-8">Fill out the form below and our team will respond within 24 business hours.</p>
 
@@ -124,7 +117,10 @@ export default function Contact() {
             </div>
 
             {/* Contact Info — 2 cols */}
-            <div className="lg:col-span-2 space-y-5">
+            <div 
+              className={`lg:col-span-2 space-y-5 scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}
+              style={{ transitionDelay: '150ms' }}
+            >
               {contactInfo.map((info, i) => {
                 const Icon = info.icon
                 return (

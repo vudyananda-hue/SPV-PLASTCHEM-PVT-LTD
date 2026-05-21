@@ -34,7 +34,11 @@ const CategorySection = ({ cat }) => {
       {/* Product Cards */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {cat.products.map((product, pi) => (
-          <div key={pi} className="bg-white rounded-xl p-6 border border-neutral-100 card-hover">
+          <div 
+            key={pi} 
+            className={`bg-white rounded-xl p-6 border border-neutral-100 card-pro-hover scroll-animate scroll-zoom-in ${isVisible ? 'is-visible' : ''}`}
+            style={{ animationDelay: `${pi * 75}ms` }}
+          >
             <h3 className="text-lg font-bold text-neutral-900 mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{product.name}</h3>
             <p className="text-sm text-neutral-500 leading-relaxed mb-4">{product.description}</p>
             {product.specs && Object.keys(product.specs).length > 0 && (
@@ -46,7 +50,8 @@ const CategorySection = ({ cat }) => {
                   </div>
                 ))}
               </div>
-            )}          </div>
+            )}
+          </div>
         ))}
       </div>
     </div>

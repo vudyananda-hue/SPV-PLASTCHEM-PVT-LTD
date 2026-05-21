@@ -26,21 +26,24 @@ export default function IndustriesServed() {
       />
 
       <div className="container-wide mx-auto relative z-10">
-        <SectionTitle
-          subtitle="Industries We Serve"
-          title="Solutions Across Sectors"
-          description="Our chemical products and technical expertise support diverse industrial sectors with tailored formulations and reliable supply."
-          light
-        />
+        <div className={`scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}>
+          <SectionTitle
+            subtitle="Industries We Serve"
+            title="Solutions Across Sectors"
+            description="Our chemical products and technical expertise support diverse industrial sectors with tailored formulations and reliable supply."
+            light
+          />
+        </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {industries.map((industry) => {
+          {industries.map((industry, i) => {
             const Icon = industry.icon
             return (
               <div
                 key={industry.id}
-                className={`group glass rounded-xl p-6 hover:bg-white/10 transition-all duration-300 scroll-animate scroll-fade-in-up ${isVisible ? 'is-visible' : ''}`}
+                className={`group glass rounded-xl p-6 hover:bg-white/10 transition-all duration-300 scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}
                 id={`industry-card-${industry.id}`}
+                style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center mb-5 group-hover:bg-accent-500/30 transition-colors">
                   <Icon className="w-6 h-6 text-accent-400" />

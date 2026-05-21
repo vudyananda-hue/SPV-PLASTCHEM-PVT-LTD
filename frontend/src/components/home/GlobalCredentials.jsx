@@ -1,4 +1,5 @@
 import { Award, ShieldCheck, Leaf, Globe } from 'lucide-react'
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 
 const credentials = [
   {
@@ -32,10 +33,13 @@ const credentials = [
 ]
 
 export default function GlobalCredentials() {
+  const [ref, isVisible] = useIntersectionObserver()
+  const [stampRef, stampsVisible] = useIntersectionObserver()
+
   return (
-    <section id="global-credentials" className="section-padding bg-neutral-50 industrial-texture border-y border-neutral-100">
+    <section id="global-credentials" className="section-padding bg-neutral-50 industrial-texture border-y border-neutral-100" ref={ref}>
       <div className="container-wide mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className={`text-center max-w-3xl mx-auto mb-16 scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 text-accent-600 text-xs font-bold uppercase tracking-wider mb-4">
             International Trade
           </div>
@@ -53,8 +57,9 @@ export default function GlobalCredentials() {
             return (
               <div 
                 key={i} 
-                className="group relative bg-white rounded-2xl p-6 md:p-8 card-hover border border-neutral-200/60 shadow-sm overflow-hidden flex flex-col justify-between"
+                className={`group relative bg-white rounded-2xl p-6 md:p-8 card-pro-hover border border-neutral-200/60 shadow-sm overflow-hidden flex flex-col justify-between scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}
                 id={`credential-card-${i}`}
+                style={{ transitionDelay: `${i * 100}ms` }}
               >
                 {/* Visual Accent Glow Top-Right */}
                 <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent-500/5 rounded-full blur-xl group-hover:bg-accent-500/15 transition-all duration-300" />
@@ -64,10 +69,10 @@ export default function GlobalCredentials() {
                   <span className="inline-block text-[0.65rem] font-bold tracking-wider uppercase text-neutral-400 group-hover:text-accent-500 transition-colors mb-5">
                     {item.badge}
                   </span>
-
+ 
                   {/* Icon Block */}
                   <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-6 group-hover:bg-accent-500 group-hover:text-white transition-all duration-300">
-                    <Icon className="w-6 h-6 text-primary-600 group-hover:text-white transition-colors" />
+                    <Icon className="w-6 h-6 text-primary-600 group-hover:text-white transition-colors animate-float-fast" style={{ animationDelay: `${i * 150}ms` }} />
                   </div>
 
                   {/* Title & Subtitle */}
@@ -77,7 +82,7 @@ export default function GlobalCredentials() {
                   <p className="text-xs text-neutral-400 font-medium tracking-wide uppercase mb-4">
                     {item.subtitle}
                   </p>
-
+ 
                   {/* Description */}
                   <p className="text-sm text-neutral-500 leading-relaxed">
                     {item.description}
@@ -92,13 +97,13 @@ export default function GlobalCredentials() {
         </div>
 
         {/* Visual Certification Stamps Ribbon */}
-        <div className="mt-16 pt-12 border-t border-neutral-200/60">
-          <p className="text-center text-xs font-bold text-neutral-400 uppercase tracking-widest mb-8">
+        <div className="mt-16 pt-12 border-t border-neutral-200/60" ref={stampRef}>
+          <p className={`text-center text-xs font-bold text-neutral-400 uppercase tracking-widest mb-8 scroll-animate scroll-cinematic-up ${stampsVisible ? 'is-visible' : ''}`}>
             Officially Accredited Compliance & Certification Seals
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {/* Stamp 1: ISO 9001 */}
-            <div className="flex flex-col items-center p-5 bg-white rounded-xl border border-neutral-200/50 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className={`flex flex-col items-center p-5 bg-white rounded-xl border border-neutral-200/50 shadow-sm hover:shadow-md transition-all duration-300 scroll-animate scroll-cinematic-zoom ${stampsVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '0ms' }}>
               <div className="w-16 h-16 rounded-full bg-primary-50 border-2 border-primary-100 flex items-center justify-center mb-3">
                 <span className="text-[0.6rem] font-bold text-primary-800 text-center leading-none">
                   ISO<br/><strong className="text-[0.75rem] font-extrabold">9001</strong><br/>2015
@@ -109,7 +114,7 @@ export default function GlobalCredentials() {
             </div>
 
             {/* Stamp 2: EU REACH */}
-            <div className="flex flex-col items-center p-5 bg-white rounded-xl border border-neutral-200/50 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className={`flex flex-col items-center p-5 bg-white rounded-xl border border-neutral-200/50 shadow-sm hover:shadow-md transition-all duration-300 scroll-animate scroll-cinematic-zoom ${stampsVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '100ms' }}>
               <div className="w-16 h-16 rounded-full bg-sky-50 border-2 border-sky-100 flex items-center justify-center mb-3">
                 <span className="text-[0.6rem] font-bold text-sky-800 text-center leading-none">
                   EU<br/><strong className="text-[0.75rem] font-extrabold">REACH</strong><br/>COMPLIANT
@@ -120,7 +125,7 @@ export default function GlobalCredentials() {
             </div>
 
             {/* Stamp 3: FDA */}
-            <div className="flex flex-col items-center p-5 bg-white rounded-xl border border-neutral-200/50 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className={`flex flex-col items-center p-5 bg-white rounded-xl border border-neutral-200/50 shadow-sm hover:shadow-md transition-all duration-300 scroll-animate scroll-cinematic-zoom ${stampsVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
               <div className="w-16 h-16 rounded-full bg-amber-50 border-2 border-amber-100 flex items-center justify-center mb-3">
                 <span className="text-[0.65rem] font-bold text-amber-800 text-center leading-none">
                   FDA<br/><strong className="text-[0.75rem] font-extrabold">APPROVED</strong><br/>GRADES
@@ -131,7 +136,7 @@ export default function GlobalCredentials() {
             </div>
 
             {/* Stamp 4: RoHS */}
-            <div className="flex flex-col items-center p-5 bg-white rounded-xl border border-neutral-200/50 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className={`flex flex-col items-center p-5 bg-white rounded-xl border border-neutral-200/50 shadow-sm hover:shadow-md transition-all duration-300 scroll-animate scroll-cinematic-zoom ${stampsVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '300ms' }}>
               <div className="w-16 h-16 rounded-full bg-emerald-50 border-2 border-emerald-100 flex items-center justify-center mb-3">
                 <span className="text-[0.65rem] font-bold text-emerald-800 text-center leading-none">
                   RoHS<br/><strong className="text-[0.75rem] font-extrabold">COMPLIANT</strong><br/>GREEN

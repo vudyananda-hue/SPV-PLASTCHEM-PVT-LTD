@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, FlaskConical, Beaker, Shield } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { stats } from '../../data/content'
 import { useCountUp } from '../../hooks/useCountUp'
+import Magnetic from '../common/Magnetic'
 
 const StatCounter = ({ stat }) => {
   const [ref, count] = useCountUp(stat.value, 2000);
@@ -26,19 +27,43 @@ const StatCounter = ({ stat }) => {
 };
 
 export default function HeroSection() {
+  const { scrollY } = useScroll();
+
+  // Background Parallax
+  const backgroundY = useTransform(scrollY, [0, 800], ['0%', '20%']);
+  const backgroundScale = useTransform(scrollY, [0, 800], [1, 1.06]);
+
+  // Dynamic Parallax layers (Depth levels)
+  const layer1Y = useTransform(scrollY, [0, 800], [0, -100]); // Fast upward motion
+  const layer2Y = useTransform(scrollY, [0, 800], [0, 150]);  // Downward motion
+  const layer3Y = useTransform(scrollY, [0, 800], [0, -50]);  // Slow upward motion
+
   return (
     <section
       id="hero"
-      className="relative min-h-[100vh] flex items-center overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(17, 29, 56, 0.75) 40%, rgba(27, 45, 74, 0.65) 70%, rgba(13, 22, 46, 0.9) 100%), url('/hero-bg.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
+      className="relative min-h-[100vh] flex items-center overflow-hidden bg-primary-950"
     >
+      {/* Background Parallax & Reveal Layer */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="w-full h-full"
+          initial={{ scale: 1.15 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.div
+            className="w-full h-full bg-cover bg-center"
+            style={{
+              backgroundImage: `linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(17, 29, 56, 0.75) 40%, rgba(27, 45, 74, 0.65) 70%, rgba(13, 22, 46, 0.9) 100%), url('/hero-bg.png')`,
+              y: backgroundY,
+              scale: backgroundScale,
+            }}
+          />
+        </motion.div>
+      </div>
+
       {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {/* Molecular grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -51,15 +76,21 @@ export default function HeroSection() {
             backgroundPosition: '0 0, 15px 15px',
           }}
         />
-        {/* Floating orbs */}
-        <div className="absolute top-1/4 left-[10%] w-72 h-72 bg-accent-500/10 rounded-full blur-[100px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-[15%] w-96 h-96 bg-primary-400/10 rounded-full blur-[120px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-[60%] left-[50%] w-48 h-48 bg-accent-500/5 rounded-full blur-[80px] animate-pulse-glow" style={{ animationDelay: '0.5s' }} />
+        {/* Floating orbs with depth translations */}
+        <motion.div style={{ y: layer1Y }} className="absolute top-1/4 left-[10%] w-72 h-72 bg-accent-500/10 rounded-full blur-[100px] animate-pulse-glow" />
+        <motion.div style={{ y: layer2Y }} className="absolute bottom-1/4 right-[15%] w-96 h-96 bg-primary-400/10 rounded-full blur-[120px] animate-pulse-glow" />
+        <motion.div style={{ y: layer3Y }} className="absolute top-[60%] left-[50%] w-48 h-48 bg-accent-500/5 rounded-full blur-[80px] animate-pulse-glow" />
 
-        {/* Decorative molecular icons */}
-        <FlaskConical className="absolute top-[20%] right-[20%] w-16 h-16 text-white/[0.03] rotate-12" />
-        <Beaker className="absolute bottom-[30%] left-[8%] w-20 h-20 text-white/[0.03] -rotate-12" />
-        <Shield className="absolute top-[15%] left-[25%] w-12 h-12 text-white/[0.03] rotate-6" />
+        {/* Decorative molecular icons with depth translations */}
+        <motion.div style={{ y: layer1Y }} className="absolute top-[20%] right-[20%] w-16 h-16 text-white/[0.03] rotate-12">
+          <FlaskConical className="w-full h-full animate-float-slow" />
+        </motion.div>
+        <motion.div style={{ y: layer2Y }} className="absolute bottom-[30%] left-[8%] w-20 h-20 text-white/[0.03] -rotate-12">
+          <Beaker className="w-full h-full animate-float" />
+        </motion.div>
+        <motion.div style={{ y: layer3Y }} className="absolute top-[15%] left-[25%] w-12 h-12 text-white/[0.03] rotate-6">
+          <Shield className="w-full h-full animate-float-fast" />
+        </motion.div>
       </div>
 
       {/* Content */}
@@ -135,46 +166,89 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Main heading */}
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold text-white leading-[1.1] mb-6 animate-slide-up"
+          {/* Main heading with split-text mask reveal */}
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold text-white leading-[1.1] mb-6 flex flex-wrap gap-x-3 gap-y-1.5"
             style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.12,
+                  delayChildren: 0.2
+                }
+              }
+            }}
           >
-            Leading{' '}
-            <span className="gradient-text">Indenting Agent</span>{' '}
-            & Marketing Office
-          </h1>
+            {["Leading", "Indenting", "Agent", "&", "Marketing", "Office"].map((word, index) => {
+              const isAccent = word === "Indenting" || word === "Agent";
+              return (
+                <span key={index} className="inline-block overflow-hidden py-1">
+                  <motion.span
+                    className={`inline-block ${isAccent ? 'gradient-text' : 'text-white'}`}
+                    variants={{
+                      hidden: { y: "110%" },
+                      visible: { 
+                        y: 0, 
+                        transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } 
+                      }
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                </span>
+              );
+            })}
+          </motion.h1>
 
-          {/* Subtitle */}
-          <p
-            className="text-lg md:text-xl text-neutral-300 leading-relaxed mb-10 max-w-2xl animate-slide-up"
-            style={{ animationDelay: '0.15s' }}
-          >
-            Supplying premium raw materials and machinery to the Plastics, Chemical, Rubber, and Automotive industries in Sri Lanka. Representing world-class global principals.
-          </p>
-
-          {/* CTA Buttons */}
-          <div
-            className="flex flex-col sm:flex-row gap-4 mb-16 animate-slide-up"
-            style={{ animationDelay: '0.3s' }}
-          >
-            <Link to="/products" className="btn-primary text-base !py-3.5 !px-8" id="hero-cta-products">
-              Explore Solutions
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link to="/contact" className="btn-secondary text-base !py-3.5 !px-8" id="hero-cta-contact">
-              Request a Quote
-            </Link>
+          {/* Subtitle with mask reveal */}
+          <div className="overflow-hidden mb-10">
+            <motion.p
+              className="text-lg md:text-xl text-neutral-300 leading-relaxed max-w-2xl"
+              initial={{ y: "110%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Supplying premium raw materials and machinery to the Plastics, Chemical, Rubber, and Automotive industries in Sri Lanka. Representing world-class global principals.
+            </motion.p>
           </div>
 
-          {/* Stats Row */}
-          <div
-            className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 animate-slide-up"
-            style={{ animationDelay: '0.45s' }}
-          >
-            {stats.map((stat, i) => (
-              <StatCounter key={i} stat={stat} />
-            ))}
+          {/* CTA Buttons with mask reveal */}
+          <div className="overflow-hidden mb-16 py-1">
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ y: "110%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.1, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Magnetic>
+                <Link to="/products" className="btn-primary btn-shimmer text-base !py-3.5 !px-8" id="hero-cta-products">
+                  Explore Solutions
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </Magnetic>
+              <Magnetic>
+                <Link to="/contact" className="btn-secondary text-base !py-3.5 !px-8" id="hero-cta-contact">
+                  Request a Quote
+                </Link>
+              </Magnetic>
+            </motion.div>
+          </div>
+
+          {/* Stats Row with mask reveal */}
+          <div className="overflow-hidden py-1">
+            <motion.div
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8"
+              initial={{ y: "110%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {stats.map((stat, i) => (
+                <StatCounter key={i} stat={stat} />
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>

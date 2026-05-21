@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronRight, Sun, Moon } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
+import Magnetic from '../common/Magnetic'
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -102,11 +103,11 @@ export default function Navbar() {
                   to={link.path}
                   end={link.path === '/'}
                   className={({ isActive }) =>
-                    `px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    `px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 nav-link-underline ${
                       isActive
                         ? showTransparent
-                          ? 'text-accent-400 bg-white/10'
-                          : 'text-accent-600 bg-accent-50 dark:text-accent-400 dark:bg-accent-500/10'
+                          ? 'text-accent-400 bg-white/10 active'
+                          : 'text-accent-600 bg-accent-50 dark:text-accent-400 dark:bg-accent-500/10 active'
                         : showTransparent
                         ? 'text-neutral-200 hover:text-white hover:bg-white/10'
                         : 'text-neutral-600 dark:text-neutral-300 hover:text-primary-900 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-white/10'
@@ -122,9 +123,9 @@ export default function Navbar() {
                 <NavLink
                   to="/admin"
                   className={({ isActive }) =>
-                    `px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    `px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 nav-link-underline ${
                       isActive
-                        ? 'text-accent-600 bg-accent-50'
+                        ? 'text-accent-600 bg-accent-50 active'
                         : showTransparent
                         ? 'text-neutral-200 hover:text-white hover:bg-white/10'
                         : 'text-neutral-600 hover:text-primary-900 hover:bg-neutral-50'
@@ -136,14 +137,16 @@ export default function Navbar() {
                 </NavLink>
               )}
 
-              <Link
-                to="/contact"
-                className="ml-3 btn-primary text-sm !py-2 !px-5"
-                id="nav-cta"
-              >
-                Get a Quote
-                <ChevronRight className="w-4 h-4" />
-              </Link>
+              <Magnetic>
+                <Link
+                  to="/contact"
+                  className="ml-3 btn-primary btn-shimmer text-sm !py-2 !px-5"
+                  id="nav-cta"
+                >
+                  Get a Quote
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+              </Magnetic>
 
               {/* Dark Mode Toggle */}
               <button

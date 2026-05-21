@@ -9,18 +9,20 @@ export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="section-padding bg-neutral-50" ref={ref}>
       <div className="container-wide mx-auto">
-        <SectionTitle
-          subtitle="Client Feedback"
-          title="What Our Partners Say"
-          description="We take pride in building long-lasting relationships and delivering exceptional value to the manufacturing sector."
-        />
+        <div className={`scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}>
+          <SectionTitle
+            subtitle="Client Feedback"
+            title="What Our Partners Say"
+            description="We take pride in building long-lasting relationships and delivering exceptional value to the manufacturing sector."
+          />
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, i) => (
             <div 
               key={testimonial.id} 
-              className={`bg-white p-8 rounded-2xl shadow-sm border border-neutral-100 card-hover scroll-animate scroll-fade-in-up ${isVisible ? 'is-visible' : ''}`}
-              style={{ transitionDelay: `${i * 150}ms` }}
+              className={`bg-white p-8 rounded-2xl shadow-sm border border-neutral-100 card-pro-hover scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, index) => (

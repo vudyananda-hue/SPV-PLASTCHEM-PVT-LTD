@@ -21,7 +21,7 @@ export default function CompanyIntro() {
       <div className="container-wide mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Content */}
-          <div className={`scroll-animate scroll-slide-right ${isVisible ? 'is-visible' : ''}`}>
+          <div className={`scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}>
             <span className="inline-block text-sm font-semibold tracking-widest uppercase text-accent-500 mb-3">
               About Our Company
             </span>
@@ -50,7 +50,7 @@ export default function CompanyIntro() {
 
             <Link
               to="/about"
-              className="btn-primary"
+              className="btn-primary btn-shimmer"
               id="intro-learn-more"
             >
               Learn More About Us
@@ -59,7 +59,10 @@ export default function CompanyIntro() {
           </div>
 
           {/* Right — Visual Card */}
-          <div className={`relative scroll-animate scroll-fade-in-up animate-delay-200 ${isVisible ? 'is-visible' : ''}`}>
+          <div 
+            className={`relative scroll-animate scroll-cinematic-up ${isVisible ? 'is-visible' : ''}`}
+            style={{ transitionDelay: '150ms' }}
+          >
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary-800 to-primary-900 p-8 md:p-10 min-h-[400px] flex flex-col justify-end card-hover">
               {/* Decorative background pattern */}
               <div
