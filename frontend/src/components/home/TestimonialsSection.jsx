@@ -30,14 +30,22 @@ export default function TestimonialsSection() {
               <p className="text-neutral-600 leading-relaxed italic mb-6">
                 "{testimonial.content}"
               </p>
-              <div>
-                <h4 className="font-bold text-neutral-900" style={{ fontFamily: 'var(--font-heading)' }}>
-                  {testimonial.name}
-                </h4>
-                <p className="text-sm text-neutral-500">
-                  {testimonial.role}, <span className="font-medium text-accent-600">{testimonial.company}</span>
-                </p>
-              </div>
+              {testimonial.name && (
+                <div>
+                  <h4 className="font-bold text-neutral-900" style={{ fontFamily: 'var(--font-heading)' }}>
+                    {testimonial.name}
+                  </h4>
+                  {(testimonial.role || testimonial.company) && (
+                    <p className="text-sm text-neutral-500">
+                      {testimonial.role}
+                      {testimonial.role && testimonial.company && ', '}
+                      {testimonial.company && (
+                        <span className="font-medium text-accent-600">{testimonial.company}</span>
+                      )}
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>
