@@ -269,7 +269,7 @@ export const industries = [
   },
   {
     id: 'plastic',
-    name: 'Plastic Processing & Packaging',
+    name: 'Plastics Processing & Packaging',
     icon: Briefcase,
     description: 'Serving the Plastic processing and Packaging Industries of Sri Lanka with masterbatches and raw materials.',
     solutions: ['Pigment Master Batch', 'Smart Label Printers', 'Packaging Solutions'],
