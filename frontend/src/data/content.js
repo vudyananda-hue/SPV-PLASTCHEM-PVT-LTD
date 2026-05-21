@@ -137,7 +137,7 @@ export const principals = [
     applications: [],
     products: [
       { name: 'Rubber to Metal Bonding Adhesive', description: 'Specialty adhesives engineered for high-strength rubber-to-metal bonding.', specs: { 'Strength': 'High-strength', 'Cure Type': 'Heat' } },
-      { name: 'Construction Additives', description: 'Advanced additives for building material enhancement.', specs: { 'Application': 'Construction' } }
+      { name: 'Construction Additives', description: 'Advanced additives for building material enhancement.', specs: { 'Origin': 'USA' } }
     ]
   },
   {
