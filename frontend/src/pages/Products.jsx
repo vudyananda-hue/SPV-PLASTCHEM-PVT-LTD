@@ -37,8 +37,16 @@ const CategorySection = ({ cat }) => {
           <div key={pi} className="bg-white rounded-xl p-6 border border-neutral-100 card-hover">
             <h3 className="text-lg font-bold text-neutral-900 mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{product.name}</h3>
             <p className="text-sm text-neutral-500 leading-relaxed mb-4">{product.description}</p>
-
-          </div>
+            {product.specs && Object.keys(product.specs).length > 0 && (
+              <div className="bg-neutral-50 rounded-lg p-3 mb-4">
+                {Object.entries(product.specs).map(([key, val]) => (
+                  <div key={key} className="flex justify-between text-xs py-1 border-b border-neutral-100 last:border-0">
+                    <span className="text-neutral-500">{key}</span>
+                    <span className="font-medium text-neutral-700">{val}</span>
+                  </div>
+                ))}
+              </div>
+            )}          </div>
         ))}
       </div>
     </div>

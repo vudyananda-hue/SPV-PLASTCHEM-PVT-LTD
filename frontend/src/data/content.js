@@ -110,7 +110,7 @@ export const principals = [
     description: 'We act as an Indenting agent / Marketing office for DOW CHEMICAL INTERNATIONAL PVT LTD, specializing in raw materials for the Paint & Coating Industry.',
     applications: [],
     products: [
-      { name: 'Polyurethane', description: 'High-performance polyurethane for industrial systems.', specs: { 'Origin': 'Global', 'Quality': 'Premium' } },
+      { name: 'Polyurethane', description: 'High-performance polyurethane for industrial systems.' },
       { name: 'Paint & Coating Materials', description: 'Raw materials for commercial and industrial paint formulations.', specs: { 'Type': 'Raw Materials' } }
     ]
   },
@@ -122,7 +122,7 @@ export const principals = [
     color: '#2563EB',
     shortDescription: '',
     description: 'Supplying Amino – AMP Dispersant, a multifunctional specialty additive containing 2-amino-2-methyl-1-Propanol AMP 95.',
-    applications: ['Water-Based Coatings', 'Pigment Dispersion', 'pH Stabilization'],
+    applications: [],
     products: [
       { name: 'AMP-95 Additive', description: 'Amino-AMP Dispersant acting as a multifunctional specialty additive containing 2-amino-2-methyl-1-Propanol.', specs: { 'Concentration': 'AMP 95', 'Grade': 'Industrial' } }
     ]
@@ -135,7 +135,7 @@ export const principals = [
     color: '#059669',
     shortDescription: '',
     description: 'Providing Rubber to Metal Bonding Adhesives, Construction Chemicals, and Automotive solutions.',
-    applications: ['Rubber to Metal Bonding Adhesive', 'Construction Chemicals', 'Automotive Assembly'],
+    applications: [],
     products: [
       { name: 'Rubber to Metal Bonding Adhesive', description: 'Specialty adhesives engineered for high-strength rubber-to-metal bonding.', specs: { 'Strength': 'High-strength', 'Cure Type': 'Heat' } },
       { name: 'Construction Additives', description: 'Advanced additives for building material enhancement.', specs: { 'Application': 'Construction' } }
@@ -143,26 +143,26 @@ export const principals = [
   },
   {
     id: 'idex',
-    name: 'IDEX - (USA)',
+    name: 'IDEX - (India)',
     slug: 'idex',
     icon: Factory,
     color: '#D97706',
     shortDescription: '',
     description: 'Supplying dispensing and mixing machines specifically designed for the Paint Industry.',
-    applications: ['Paint Dispensing', 'Industrial Mixing', 'Retail Color Tinting'],
+    applications: [],
     products: [
       { name: 'Dispensing & Mixing Machines', description: 'Precision mixing and dispensing machinery for paint and coating manufacturers.', specs: { 'Origin': 'USA', 'Support': 'Local Technical' } }
     ]
   },
   {
     id: 'evonik',
-    name: 'Evonik India Pvt. Ltd. (France)',
+    name: 'Evonik India Pvt. Ltd. (Germany, France)',
     slug: 'evonik',
     icon: Target,
     color: '#7C3AED',
     shortDescription: '',
     description: 'Marketing office for Polyurethane Additives from Evonik.',
-    applications: ['Polyurethane Foam Catalysis', 'Cell Stabilization', 'Surfactant Enhancement'],
+    applications: [],
     products: [
       { name: 'Polyurethane Additives', description: 'Specialty catalysts and surfactants to optimize PU system manufacturing.', specs: { 'Origin': 'Evonik France' } }
     ]
@@ -175,7 +175,7 @@ export const principals = [
     color: '#475569',
     shortDescription: '',
     description: 'Supplying Smart label printers and Labels from SEIKO USA.',
-    applications: ['Industrial Labeling', 'Barcode Printing', 'Smart Inventory Control'],
+    applications: [],
     products: [
       { name: 'Smart Label Printers', description: 'High-precision smart hardware for commercial and logistics label printing.', specs: { 'Brand': 'SEIKO', 'Connectivity': 'Smart / USB / Network' } },
       { name: 'High-Durability Labels', description: 'Labels resistant to chemicals, moisture, and extreme temperatures.', specs: { 'Type': 'Premium Labels' } }
@@ -189,7 +189,7 @@ export const principals = [
     color: '#EC4899',
     shortDescription: '',
     description: 'Providing Pigment Colorants and Pastes for PU, Paint, and Rubber industries.',
-    applications: ['Polyurethane Coloring', 'Paint Tinting', 'Rubber Compounding'],
+    applications: [],
     products: [
       { name: 'Pigment Colorants & Pastes', description: 'Vibrant, high-stability pigment pastes for coloring PU systems, paints, and rubber compounds.', specs: { 'Origin': 'Soujanya India' } }
     ]
@@ -202,7 +202,7 @@ export const principals = [
     color: '#10B981',
     shortDescription: '',
     description: 'Supplying Reclaimed Rubber from Yong Fong Rubber Industries.',
-    applications: ['Tire Manufacturing', 'Rubber Flooring & Mats', 'Moulded Rubber Goods'],
+    applications: [],
     products: [
       { name: 'Reclaimed Rubber', description: 'Sustainable, high-quality devulcanized reclaimed rubber to optimize manufacturing costs.', specs: { 'Origin': 'Malaysia', 'Grade': 'Premium' } }
     ]
@@ -215,7 +215,7 @@ export const principals = [
     color: '#0EA5E9',
     shortDescription: '',
     description: 'Marketing Pigment Master Batch (White, Black) for various applications.',
-    applications: ['Plastic Film Extrusion', 'Injection Moulding', 'Blow Moulding'],
+    applications: [],
     products: [
       { name: 'Pigment Master Batch (White & Black)', description: 'Premium grade black and white color masterbatches for the plastics industry.', specs: { 'Origin': 'Malion China' } }
     ]
@@ -228,7 +228,7 @@ export const principals = [
     color: '#F59E0B',
     shortDescription: '',
     description: 'Supplying Color Pigments from Micas Organics Limited.',
-    applications: ['Color Pigment', 'Ink Formulations', 'Plastic Coloration'],
+    applications: [],
     products: [
       { name: 'Color Pigment', description: 'High-purity organic and inorganic pigments for color‑critical manufacturing.', specs: { 'Brand': 'Micas Organics' } }
     ]
@@ -241,7 +241,7 @@ export const principals = [
     color: '#8B5CF6',
     shortDescription: '',
     description: 'Supplying Polyol from Manali Petro Chemicals.',
-    applications: ['Polyurethane & Systems.', 'Elastomers', 'Coatings & Adhesives'],
+    applications: [],
     products: [
       { name: 'Polyol', description: 'High-quality polyols for flexible and rigid foam production.', specs: { 'Brand': 'Manali' } }
     ]
