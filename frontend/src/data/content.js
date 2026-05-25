@@ -156,7 +156,7 @@ export const principals = [
   },
   {
     id: 'evonik',
-    name: 'Evonik India Pvt. Ltd. (Germany, France)',
+    name: 'Evonik India Pvt. Ltd.',
     slug: 'evonik',
     icon: Target,
     color: '#7C3AED',
