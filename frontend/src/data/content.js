@@ -143,7 +143,7 @@ export const principals = [
   },
   {
     id: 'idex',
-    name: 'IDEX - (India)',
+    name: 'IDEX',
     slug: 'idex',
     icon: Factory,
     color: '#D97706',
