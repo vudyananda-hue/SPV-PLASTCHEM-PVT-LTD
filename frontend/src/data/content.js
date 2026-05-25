@@ -169,12 +169,12 @@ export const principals = [
   },
   {
     id: 'seiko',
-    name: 'SEIKO USA',
+    name: 'SEIKO',
     slug: 'seiko',
     icon: Briefcase,
     color: '#475569',
     shortDescription: '',
-    description: 'Supplying Smart label printers and Labels from SEIKO USA.',
+    description: 'Supplying Smart label printers and Labels from SEIKO.',
     applications: [],
     products: [
       { name: 'Smart Label Printers', description: 'High-precision smart hardware for commercial and logistics label printing.', specs: { 'Origin': 'Japan', 'Connectivity': 'Smart / USB / Network' } },
