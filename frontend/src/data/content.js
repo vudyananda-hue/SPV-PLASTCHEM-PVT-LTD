@@ -183,7 +183,7 @@ export const principals = [
   },
   {
     id: 'soujanya',
-    name: 'SOUJANYA Color India',
+    name: 'SOUJANYA Color',
     slug: 'soujanya',
     icon: Palette,
     color: '#EC4899',
